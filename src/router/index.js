@@ -7,10 +7,12 @@ Vue.use(Router)
 import Layout from '@/layout'
 
 /* Router Modules */
-import componentsRouter from './modules/components'
-import chartsRouter from './modules/charts'
-import tableRouter from './modules/table'
-import nestedRouter from './modules/nested'
+// import componentsRouter from './modules/components'
+// import chartsRouter from './modules/charts'
+// import tableRouter from './modules/table'
+// import nestedRouter from './modules/nested'
+/* demo演示专用*/
+import demoRouter from './modules/demo/index'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -73,6 +75,14 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
+    hidden: true,
+    redirect: '/demo/base-settings/check-role/index',
+    name: 'DefaultPage',
+    meta: { title: '默认页面', icon: '', affix: false, noCache: true, roles: ['admin'] }
+  }
+  /* {
+    path: '/',
+    component: Layout,
     redirect: '/dashboard',
     children: [
       {
@@ -121,14 +131,14 @@ export const constantRoutes = [
         meta: { title: 'profile', icon: 'user', noCache: true }
       }
     ]
-  }
+  }*/
 ]
 
 /**
  * asyncRoutes
  * the routes that need to be dynamically loaded based on user roles
  */
-export const asyncRoutes = [
+export const asyncRoutes = []/* [
   {
     path: '/permission',
     component: Layout,
@@ -184,7 +194,7 @@ export const asyncRoutes = [
     ]
   },
 
-  /** when your routing map is too long, you can split it into small modules **/
+  /!** when your routing map is too long, you can split it into small modules **!/
   componentsRouter,
   chartsRouter,
   nestedRouter,
@@ -398,7 +408,10 @@ export const asyncRoutes = [
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
-]
+]*/
+
+/* 将demo演示专用的路由拼接到静态路由中*/
+constantRoutes.push.apply(constantRoutes, demoRouter)
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
