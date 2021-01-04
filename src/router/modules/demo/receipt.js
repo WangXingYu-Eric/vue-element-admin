@@ -2,8 +2,8 @@ import Layout from '@/layout/index'
 
 const receiptRouter =
   {
-    path: '/demo/data-audit',
-    redirect: '/demo/data-audit/index',
+    path: '/demo/receipt',
+    redirect: '/demo/receipt/index',
     hidden: false,
     component: Layout,
     alwaysShow: false,
