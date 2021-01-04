@@ -1,5 +1,118 @@
 export default {
   route: {
+    /* demo演示的国际化配置*/
+    demo: {
+      baseSettings: {
+        title: '基本信息配置',
+        children: {
+          checkRole: {
+            title: '检核规则管理'
+          },
+          reportParameter: {
+            title: '报送参数配置'
+          },
+          codeTransfer: {
+            title: '码表转换配置'
+          },
+          groupRole: {
+            title: '部门权限管理'
+          },
+          userGroup: {
+            title: '用户部门管理'
+          }
+        }
+      },
+      job: {
+        title: '任务管理',
+        children: {
+          eastQuery: {
+            title: 'East任务查询'
+          },
+          coreQuery: {
+            title: '核心推数查询'
+          }
+        }
+      },
+      dataCollection: {
+        title: '数据系统采集'
+      },
+      dataMaintenance: {
+        title: '数据人工维护',
+        children: {
+          dongJianGao: {
+            title: '董监高维护'
+          },
+          branch: {
+            title: '分支机构维护'
+          },
+          groupEquity: {
+            title: '机构股权维护'
+          },
+          entrustedInvestment: {
+            title: '委托投资情况维护'
+          },
+          associatedInformation: {
+            title: '关联方信息维护'
+          },
+          importantAssociated: {
+            title: '重大关联交易维护'
+          },
+          associatedAggregate: {
+            title: '关联交易汇总'
+          },
+          bankAccountInformation: {
+            title: '银行账户信息维护'
+          },
+          autonomousInvestmentPositionDetails: {
+            title: '自主投资账户持仓明细维护'
+          },
+          autonomousInvestmentRecord: {
+            title: '自主投资交易流水维护'
+          },
+          autonomousInvestmentAggregate: {
+            title: '自主投资信息汇总维护'
+          }
+        }
+      },
+      dataSplitCheck: {
+        title: '数据拆分校验管理'
+      },
+      checkResult: {
+        title: '校验结果维护'
+      },
+      checkResultConfirm: {
+        title: '校验结果确认'
+      },
+      dataAudit: {
+        title: '数据审核'
+      },
+      dataApproval: {
+        title: '数据审批'
+      },
+      oneButtonReport: {
+        title: '一键上报'
+      },
+      receipt: {
+        title: '回执处理'
+      },
+      integratedQuery: {
+        title: '综合查询',
+        children: {
+          dataStatus: {
+            title: '提数状态'
+          },
+          maintenanceStatus: {
+            title: '维护状态'
+          },
+          checkStatus: {
+            title: '校验状态'
+          },
+          auditStatus: {
+            title: '审核状态'
+          }
+        }
+      }
+    },
     dashboard: '首页',
     documentation: '文档',
     guide: '引导页',
