@@ -130,7 +130,7 @@ aside {
 }
 
 .pagination-container {
-  margin-top: 30px;
+  margin-top: 0
 }
 
 .text-center {
@@ -192,11 +192,11 @@ aside {
 
 //自定义全局样式
 
-.float-left{
+.float-left {
   float: left;
 }
 
-.float-right{
+.float-right {
   float: right;
 }
 
@@ -360,11 +360,11 @@ aside {
   margin-left: 50px;
 }
 
-.float-left{
+.float-left {
   float: left;
 }
 
-.float-right{
+.float-right {
   float: right;
 }
 
@@ -528,3 +528,6 @@ aside {
   padding-left: 50px;
 }
 
+.width-100 {
+  width: 100%;
+}

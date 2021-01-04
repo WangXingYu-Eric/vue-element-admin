@@ -61,7 +61,7 @@ export default {
 <style lang="scss" scoped>
   @import "~@/styles/mixin.scss";
   @import "~@/styles/variables.scss";
-
+  @import "~font-awesome/css/font-awesome.min.css";
   .app-wrapper {
     @include clearfix;
     position: relative;

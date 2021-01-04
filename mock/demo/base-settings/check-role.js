@@ -26,7 +26,6 @@ module.exports = [
         if (filter.roleMajorTable && item.roleMajorTable !== filter.roleMajorTable) { return false }
         if (filter.roleStatus && item.roleStatus !== filter.roleStatus) { return false }
         if (filter.roleDescription && !filter.roleDescription.indexOf(item.roleDescription) < 0) { return false }
-        console.log(filter.roleDescription && filter.roleDescription.indexOf(item.roleDescription) < 0)
         return true
       })
 

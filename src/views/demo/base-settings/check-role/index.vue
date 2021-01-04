@@ -45,14 +45,17 @@
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8" class="float-right">
-            <el-button type="danger" icon="el-icon-close" class="float-right ml-10" @click="()=>{}">停用</el-button>
-            <el-button type="primary" icon="el-icon-check" class="float-right" @click="()=>{}">启用</el-button>
-            <el-button type="primary" icon="el-icon-search" class="float-right" @click="handleFilter">搜索</el-button>
+            <el-button type="danger" icon="fa fa-trash-o" circle title="规则删除" class="float-right ml-10" @click="()=>{}" />
+            <el-button type="primary" icon="fa fa-edit" circle title="规则修改" class="float-right" @click="()=>{}" />
+            <el-button type="success" icon="fa fa-plus" circle title="规则增加" class="float-right" @click="()=>{}" />
+            <el-button type="info" icon="fa fa-pause" circle title="停用" class="float-right ml-10" @click="()=>{}" />
+            <el-button type="primary" icon="fa fa-check" circle title="启用" class="float-right" @click="()=>{}" />
+            <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click="handleFilter" />
           </el-col>
         </el-row>
       </el-form>
     </div>
-    <el-table :data="tableData" style="width: 100%">
+    <el-table v-loading="tableLoading" :data="tableData" stripe highlight-current-row class="width-100">
       <el-table-column type="index" label="序号" min-width="50" />
       <el-table-column prop="roleCollection" label="所属规则集" min-width="150" />
       <el-table-column prop="roleSource" label="规则来源" min-width="100" />
@@ -85,6 +88,7 @@ export default {
       rules: {
       },
       tableData: [],
+      tableLoading: false,
       pagination: {
         page: 1,
         limit: 10,
@@ -97,12 +101,15 @@ export default {
   },
   methods: {
     fetchList() {
+      this.tableLoading = true
       fetchList(this.filter, this.pagination).then(response => {
         console.log(response.data)
         this.tableData = response.data.list
         this.pagination.total = response.data.total
+        this.tableLoading = false
       }).catch(error => {
         console.log(error)
+        this.tableLoading = false
       })
     },
     handleFilter() {
