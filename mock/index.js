@@ -1,3 +1,5 @@
+// import demoMocks from './demo'
+
 const Mock = require('mockjs')
 const { param2Obj } = require('./utils')
 
@@ -6,11 +8,15 @@ const role = require('./role')
 const article = require('./article')
 const search = require('./remote-search')
 
+// demo演示专用的mock数据
+const baseSettingsCheckRole = require('./demo/base-settings/check-role')
 const mocks = [
   ...user,
   ...role,
   ...article,
-  ...search
+  ...search,
+
+  ...baseSettingsCheckRole
 ]
 
 // for front mock
@@ -33,7 +39,7 @@ function mockXHR() {
 
   function XHR2ExpressReqWrap(respond) {
     return function(options) {
-      let result = null
+      let result
       if (respond instanceof Function) {
         const { body, type, url } = options
         // https://expressjs.com/en/4x/api.html#req
