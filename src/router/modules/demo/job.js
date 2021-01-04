@@ -3,6 +3,7 @@ import Layout from '@/layout/index'
 const jobRouter =
   {
     path: '/demo/job',
+    redirect: '/demo/job/east-query/index',
     hidden: false,
     component: Layout,
     alwaysShow: true,

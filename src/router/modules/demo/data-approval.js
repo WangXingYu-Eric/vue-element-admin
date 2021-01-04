@@ -2,7 +2,8 @@ import Layout from '@/layout/index'
 
 const dataApprovalRouter =
   {
-    path: '/demo/data-approlva',
+    path: '/demo/data-approval',
+    redirect: '/demo/data-approval/index',
     hidden: false,
     component: Layout,
     alwaysShow: false,

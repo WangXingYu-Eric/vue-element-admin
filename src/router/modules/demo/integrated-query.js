@@ -3,6 +3,7 @@ import Layout from '@/layout/index'
 const integratedQueryRouter =
   {
     path: '/demo/integrated-query',
+    redirect: '/demo/integrated-query/data-status/index',
     hidden: false,
     component: Layout,
     alwaysShow: true,

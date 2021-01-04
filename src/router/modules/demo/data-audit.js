@@ -3,6 +3,7 @@ import Layout from '@/layout/index'
 const dataAuditRouter =
   {
     path: '/demo/data-audit',
+    redirect: '/demo/data-audit/index',
     hidden: false,
     component: Layout,
     alwaysShow: false,

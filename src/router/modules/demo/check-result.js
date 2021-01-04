@@ -3,6 +3,7 @@ import Layout from '@/layout/index'
 const checkResultRouter =
   {
     path: '/demo/check-result',
+    redirect: '/demo/check-result/index',
     hidden: false,
     component: Layout,
     alwaysShow: false,

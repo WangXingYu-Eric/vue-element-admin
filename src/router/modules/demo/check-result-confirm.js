@@ -3,6 +3,7 @@ import Layout from '@/layout/index'
 const checkResultConfirmRouter =
   {
     path: '/demo/check-result-confirm',
+    redirect: '/demo/check-result-confirm/index',
     hidden: false,
     component: Layout,
     alwaysShow: false,

@@ -3,6 +3,7 @@ import Layout from '@/layout/index'
 const oneButtonReportRouter =
   {
     path: '/demo/one-button-report',
+    redirect: '/demo/one-button-report/index',
     hidden: false,
     component: Layout,
     alwaysShow: false,

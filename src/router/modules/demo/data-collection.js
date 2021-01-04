@@ -3,6 +3,7 @@ import Layout from '@/layout/index'
 const dataCollectionRouter =
   {
     path: '/demo/data-collection',
+    redirect: '/demo/data-collection/index',
     hidden: false,
     component: Layout,
     alwaysShow: false,

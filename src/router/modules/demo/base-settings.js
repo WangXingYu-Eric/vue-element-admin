@@ -3,6 +3,7 @@ import Layout from '@/layout/index'
 const baseSettingsRouter =
   {
     path: '/demo/base-settings',
+    redirect: '/demo/base-settings/check-role/index',
     hidden: false,
     component: Layout,
     alwaysShow: true,

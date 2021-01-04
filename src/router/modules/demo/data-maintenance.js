@@ -3,6 +3,7 @@ import Layout from '@/layout/index'
 const dataMaintenanceRouter =
   {
     path: '/demo/data-maintenance',
+    redirect: '/demo/data-maintenance/dongjiangao/index',
     hidden: false,
     component: Layout,
     alwaysShow: true,
