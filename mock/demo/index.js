@@ -7,6 +7,7 @@ const baseSettingsUserGroup = require('./base-settings/user-group')
 
 // 任务管理
 const jobCoreQuery = require('./job/core-query')
+const jobEastQuery = require('./job/east-query')
 
 module.exports = [
   // 基础信息配置
@@ -17,5 +18,6 @@ module.exports = [
   ...baseSettingsUserGroup,
 
   // 任务管理
-  ...jobCoreQuery
+  ...jobCoreQuery,
+  ...jobEastQuery
 ]

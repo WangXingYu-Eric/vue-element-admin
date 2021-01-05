@@ -4,30 +4,29 @@ const list = []
 for (let i = 0; i < 100; i++) {
   list.push(Mock.mock({
     id: '@increment',
-    roleSource: '监管发文规则',
-    roleType: '条件必填',
-    roleCollection: '主流程集中采集规则',
-    roleMajorTable: '机构股权信息表',
-    'roleStatus|1': ['启用', '停用'],
-    roleDescription: '@ctitle(4,8)',
-    'data|1': ['机构证件类型', '个人证件类型', '处罚机关']
+    jobNumber: /^[MS](0000015)\d{3}$/,
+    batchNumber: /^(0000015)\d{3}$/,
+    'jobType|1': ['主流程', '次流程'],
+    majorJob: /^[MS](0000015)\d{3}$/,
+    'reportStatus|1': ['人工维护中', '待人工维护'],
+    dataRange: '2017-2020年',
+    dataStartTime: '@datetime("yyyy-MM-dd")',
+    dataEndTime: '@datetime("yyyy-MM-dd")',
+    dataProcessTime: '@datetime("yyyy-MM-dd HH:mm:ss")'
   }))
 }
 
 module.exports = [
   {
-    url: '/demo/base-settings/check-role/list',
+    url: '/demo/job/east-query/list',
     type: 'get',
     response: config => {
       const filter = JSON.parse(config.query.filter)
       const pagination = JSON.parse(config.query.pagination)
       const filteredList = list.filter(item => {
-        if (filter.roleSource && item.roleSource !== filter.roleSource) { return false }
-        if (filter.roleType && item.roleType !== filter.roleType) { return false }
-        if (filter.roleCollection && item.roleCollection !== filter.roleCollection) { return false }
-        if (filter.roleMajorTable && item.roleMajorTable !== filter.roleMajorTable) { return false }
-        if (filter.roleStatus && item.roleStatus !== filter.roleStatus) { return false }
-        return !(filter.roleDescription && item.roleDescription.indexOf(filter.roleDescription) < 0)
+        if (filter.reportType && item.reportType !== filter.reportType) { return false }
+        if (filter.dataYear && item.dataStartTime !== filter.dataYear) { return false }
+        return !(filter.dataMonth && item.dataEndTime !== filter.dataMonth)
       })
 
       const pageList = filteredList.filter((item, index) => index < pagination.limit * pagination.page && index >= pagination.limit * (pagination.page - 1))

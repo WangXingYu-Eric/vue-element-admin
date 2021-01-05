@@ -22,8 +22,7 @@
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8" class="float-right">
-            <el-button type="primary" icon="fa fa-search" circle title="EAST任务查询" class="float-right ml-10" @click="handleFilter" />
-            <el-button type="primary" icon="fa fa-search" circle title="核心数据查询" class="float-right" @click="handleFilter" />
+            <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click="handleFilter" />
           </el-col>
         </el-row>
       </el-form>
