@@ -13,7 +13,7 @@ const dataApprovalRouter =
         path: 'index',
         component: () => import('@/views/demo/data-approval/index.vue'),
         name: 'DataApprovalIndex',
-        meta: { title: 'demo. dataApproval.title', icon: '', affix: false, noCache: true, roles: ['admin'] }
+        meta: { title: 'demo. dataApproval.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

@@ -13,7 +13,7 @@ const dataCollectionRouter =
         path: 'index',
         component: () => import('@/views/demo/data-collection/index.vue'),
         name: 'DataCollectionIndex',
-        meta: { title: 'demo.dataCollection.title', icon: '', affix: false, noCache: true, roles: ['admin'] }
+        meta: { title: 'demo.dataCollection.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

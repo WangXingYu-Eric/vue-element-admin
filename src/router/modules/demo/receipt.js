@@ -13,7 +13,7 @@ const receiptRouter =
         path: 'index',
         component: () => import('@/views/demo/receipt/index.vue'),
         name: 'ReceiptIndex',
-        meta: { title: 'demo.receipt.title', icon: '', affix: false, noCache: true, roles: ['admin'] }
+        meta: { title: 'demo.receipt.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

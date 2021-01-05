@@ -56,7 +56,8 @@
       </el-form>
     </div>
     <el-table v-loading="tableLoading" :data="tableData" stripe highlight-current-row class="width-100">
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="selection" min-width="50" />
+      <el-table-column prop="id" label="序号" min-width="50" />
       <el-table-column prop="roleCollection" label="所属规则集" min-width="150" />
       <el-table-column prop="roleSource" label="规则来源" min-width="100" />
       <el-table-column prop="roleType" label="规则类型" min-width="100" />
@@ -103,7 +104,6 @@ export default {
     fetchList() {
       this.tableLoading = true
       fetchList(this.filter, this.pagination).then(response => {
-        console.log(response.data)
         this.tableData = response.data.list
         this.pagination.total = response.data.total
         this.tableLoading = false

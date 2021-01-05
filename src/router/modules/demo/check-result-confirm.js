@@ -13,7 +13,7 @@ const checkResultConfirmRouter =
         path: 'index',
         component: () => import('@/views/demo/check-result-confirm/index.vue'),
         name: 'CheckResultConfirmIndex',
-        meta: { title: 'demo.checkResultConfirm.title', icon: '', affix: false, noCache: true, roles: ['admin'] }
+        meta: { title: 'demo.checkResultConfirm.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

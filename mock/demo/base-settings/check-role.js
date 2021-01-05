@@ -1,4 +1,5 @@
 const Mock = require('mockjs')
+
 const list = []
 for (let i = 0; i < 100; i++) {
   list.push(Mock.mock({
@@ -12,6 +13,7 @@ for (let i = 0; i < 100; i++) {
     'data|1': ['机构证件类型', '个人证件类型', '处罚机关']
   }))
 }
+
 module.exports = [
   {
     url: '/base-settings/check-role/list',
@@ -25,8 +27,7 @@ module.exports = [
         if (filter.roleCollection && item.roleCollection !== filter.roleCollection) { return false }
         if (filter.roleMajorTable && item.roleMajorTable !== filter.roleMajorTable) { return false }
         if (filter.roleStatus && item.roleStatus !== filter.roleStatus) { return false }
-        if (filter.roleDescription && !filter.roleDescription.indexOf(item.roleDescription) < 0) { return false }
-        return true
+        return !(filter.roleDescription && item.roleDescription.indexOf(filter.roleDescription) < 0)
       })
 
       const pageList = filteredList.filter((item, index) => index < pagination.limit * pagination.page && index >= pagination.limit * (pagination.page - 1))

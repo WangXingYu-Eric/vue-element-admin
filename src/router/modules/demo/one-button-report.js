@@ -13,7 +13,7 @@ const oneButtonReportRouter =
         path: 'index',
         component: () => import('@/views/demo/one-button-report/index.vue'),
         name: 'OneButtonReportIndex',
-        meta: { title: 'demo.oneButtonReport.title', icon: '', affix: false, noCache: true, roles: ['admin'] }
+        meta: { title: 'demo.oneButtonReport.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

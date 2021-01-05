@@ -13,7 +13,7 @@ const dataAuditRouter =
         path: 'index',
         component: () => import('@/views/demo/data-audit/index.vue'),
         name: 'DataAuditIndex',
-        meta: { title: 'demo.dataAudit.title', icon: '', affix: false, noCache: true, roles: ['admin'] }
+        meta: { title: 'demo.dataAudit.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

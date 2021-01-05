@@ -8,16 +8,16 @@ const role = require('./role')
 const article = require('./article')
 const search = require('./remote-search')
 
-// demo演示专用的mock数据
-const baseSettingsCheckRole = require('./demo/base-settings/check-role')
 const mocks = [
   ...user,
   ...role,
   ...article,
-  ...search,
-
-  ...baseSettingsCheckRole
+  ...search
 ]
+
+// demo演示专用的mock数据
+const demo = require('./demo/index')
+mocks.push.apply(mocks, demo)
 
 // for front mock
 // please use it cautiously, it will redefine XMLHttpRequest,

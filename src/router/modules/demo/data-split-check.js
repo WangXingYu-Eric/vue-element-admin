@@ -13,7 +13,7 @@ const dataSplitCheckRouter =
         path: 'index',
         component: () => import('@/views/demo/data-split-check/index.vue'),
         name: 'DataSplitCheckIndex',
-        meta: { title: 'demo.dataSplitCheck.title', icon: '', affix: false, noCache: true, roles: ['admin'] }
+        meta: { title: 'demo.dataSplitCheck.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

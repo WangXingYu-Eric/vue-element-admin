@@ -13,7 +13,7 @@ const checkResultRouter =
         path: 'index',
         component: () => import('@/views/demo/check-result/index.vue'),
         name: 'CheckResultIndex',
-        meta: { title: 'demo.checkResult.title', icon: '', affix: false, noCache: true, roles: ['admin'] }
+        meta: { title: 'demo.checkResult.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }
