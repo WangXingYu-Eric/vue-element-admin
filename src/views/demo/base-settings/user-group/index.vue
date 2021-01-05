@@ -30,7 +30,6 @@
       <el-table-column prop="userGroup" label="机构" align="center" min-width="110" />
     </el-table>
     <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList()" />
-
   </div>
 </template>
 
