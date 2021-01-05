@@ -1,13 +1,13 @@
 <template>
   <div class="components-container">
-    <el-table v-loading="tableLoading" :data="tableData" stripe highlight-current-row class="width-100">
-      <el-table-column type="index" label="序号" min-width="50" />
-      <el-table-column prop="reportArea" label="上报地区" min-width="150" />
-      <el-table-column prop="licenseCode" label="金融许可证代码" min-width="100" />
-      <el-table-column prop="superviseCode" label="监管统计系统代码" min-width="100" />
-      <el-table-column prop="reportType" label="上报类型" min-width="150" />
-      <el-table-column prop="reportWay" label="上报方式" min-width="100" />
-      <el-table-column prop="date" label="配置日期" min-width="100" />
+    <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
+      <el-table-column type="index" label="序号" align="center" min-width="50" />
+      <el-table-column prop="reportArea" label="上报地区" align="center" min-width="150" />
+      <el-table-column prop="licenseCode" label="金融许可证代码" align="center" min-width="100" />
+      <el-table-column prop="superviseCode" label="监管统计系统代码" align="center" min-width="100" />
+      <el-table-column prop="reportType" label="上报类型" align="center" min-width="150" />
+      <el-table-column prop="reportWay" label="上报方式" align="center" min-width="100" />
+      <el-table-column prop="date" label="配置日期" align="center" min-width="100" />
     </el-table>
     <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList()" />
     <div class="clearfix" />
@@ -86,7 +86,6 @@
 </template>
 
 <script>
-
 import { fetchList } from '@/api/demo/base-settings/report-parameter'
 import Pagination from '@/components/Pagination'
 export default {

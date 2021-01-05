@@ -16,7 +16,7 @@ for (let i = 0; i < 100; i++) {
 
 module.exports = [
   {
-    url: '/base-settings/check-role/list',
+    url: '/demo/base-settings/check-role/list',
     type: 'get',
     response: config => {
       const filter = JSON.parse(config.query.filter)
