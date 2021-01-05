@@ -4,23 +4,24 @@ const list = []
 for (let i = 0; i < 100; i++) {
   list.push(Mock.mock({
     id: '@increment',
-    'groupName|1': ['财务部', '董办', '总公司'],
-    'tableName|1': ['总账会计全科表', '自主投资交易流水表', '自主投资账户持仓明细表',
-      '自主投资账户信息汇总表', '银行账户信息表', '手续费及佣金分科目明细表', '业务及管理费分科目明细表',
-      '财务凭证信息表', '内部科目对照表', '董监高履职信息表']
+    'userCode': '@word(8)',
+    'userName': '@word(8)',
+    'userStatus|1': ['有效', '无效'],
+    'userGroup|1': ['财务部', '董办', '总公司'],
+    'userDescription': '@csentence'
   }))
 }
 
 module.exports = [
   {
-    url: '/demo/base-settings/group-role/list',
+    url: '/demo/base-settings/user-group/list',
     type: 'get',
     response: config => {
       const filter = JSON.parse(config.query.filter)
       const pagination = JSON.parse(config.query.pagination)
       const filteredList = list.filter(item => {
-        if (filter.groupName && item.groupName !== filter.groupName) { return false }
-        return !(filter.tableName && item.tableName !== filter.tableName)
+        if (filter.userCode && item.userCode !== filter.userCode) { return false }
+        return !(filter.userName && item.userName !== filter.userName)
       })
       const pageList = filteredList.filter((item, index) => index < pagination.limit * pagination.page && index >= pagination.limit * (pagination.page - 1))
       return {
