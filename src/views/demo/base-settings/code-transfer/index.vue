@@ -21,7 +21,7 @@
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8" class="float-right">
-            <el-button type="success" icon="fa fa-plus" circle title="增加" class="float-right" @click="()=>{}" />
+            <el-button type="success" icon="fa fa-plus" circle title="增加" class="float-right  ml-10" @click="()=>{}" />
             <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click="handleFilter" />
           </el-col>
         </el-row>
