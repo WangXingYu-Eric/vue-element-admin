@@ -1,5 +1,5 @@
 <template>
-  <div class="components-container">
+  <div class="page-container">
     自主投资账号汇总信息维护
   </div>
 </template>

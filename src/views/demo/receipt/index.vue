@@ -1,5 +1,5 @@
 <template>
-  <div class="components-container">
+  <div class="page-container">
     回执处理
   </div>
 </template>

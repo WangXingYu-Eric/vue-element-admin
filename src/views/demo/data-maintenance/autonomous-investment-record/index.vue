@@ -1,5 +1,5 @@
 <template>
-  <div class="components-container">
+  <div class="page-container">
     自主投资交易流水维护
   </div>
 </template>

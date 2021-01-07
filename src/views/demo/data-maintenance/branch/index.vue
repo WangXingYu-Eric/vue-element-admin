@@ -1,5 +1,5 @@
 <template>
-  <div class="components-container">
+  <div class="page-container">
     分支机构维护
   </div>
 </template>

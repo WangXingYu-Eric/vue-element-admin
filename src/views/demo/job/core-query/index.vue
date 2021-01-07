@@ -1,5 +1,5 @@
 <template>
-  <div class="components-container">
+  <div class="page-container">
     <div class="filter-container">
       <el-form ref="form" :model="filter" :rules="rules" class="form-container" @submit.native.prevent>
         <el-row :gutter="10">
@@ -13,12 +13,12 @@
           </el-col>
           <el-col :xs="24" :sm="12" :md="8">
             <el-form-item label-width="90px" label="数据年度:" prop="dataYear">
-              <el-date-picker v-model="filter.dataYear" align="right" type="year" placeholder="请选择数据年度" class="width-100" />
+              <el-date-picker v-model="filter.dataYear" align="right" type="year" format="yyyy" placeholder="请选择数据年度" class="width-100" />
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8">
             <el-form-item label-width="90px" label="数据月份:" prop="dataMonth">
-              <el-date-picker v-model="filter.dataMonth" align="right" type="month" placeholder="请选择数据月份" class="width-100" />
+              <el-date-picker v-model="filter.dataMonth" align="right" type="month" format="yyyy-MM" placeholder="请选择数据月份" class="width-100" />
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8" class="float-right">
@@ -36,10 +36,10 @@
       <el-table-column prop="dataRange" label="数据区间" align="center" min-width="100" />
       <el-table-column prop="dataStartTime" label="数据起始日期" align="center" min-width="100" />
       <el-table-column prop="dataEndTime" label="数据截止日期" align="center" min-width="100" />
-      <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="120" />
+      <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="130" />
       <el-table-column label="操作" align="center" fixed="right" min-width="100">
         <template>
-          <el-button icon="fa fa-check-square-o" circle title="发送任务" @click.stop="()=>{}" />
+          <el-button size="mini" icon="fa fa-check-square-o" circle title="发送任务" @click.stop="()=>{}" />
         </template>
       </el-table-column>
     </el-table>

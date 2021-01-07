@@ -12,6 +12,9 @@ const jobEastQuery = require('./job/east-query')
 // 数据系统采集
 const dataCollection = require('./data-collection')
 
+// 数据人工维护
+const dataMaintenanceDongjiangao = require('./data-maintenance/dongjiangao')
+
 module.exports = [
   // 基础信息配置
   ...baseSettingsCheckRole,
@@ -25,6 +28,8 @@ module.exports = [
   ...jobEastQuery,
 
   // 数据系统采集
-  ...dataCollection
+  ...dataCollection,
 
+  // 数据人工维护
+  ...dataMaintenanceDongjiangao
 ]

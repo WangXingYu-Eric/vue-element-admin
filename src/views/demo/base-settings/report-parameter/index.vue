@@ -1,5 +1,6 @@
 <template>
-  <div class="components-container">
+  <div class="page-container">
+    <el-divider content-position="left">上报参数列表</el-divider>
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
       <el-table-column type="index" label="序号" align="center" min-width="50" />
       <el-table-column prop="reportArea" label="上报地区" align="center" min-width="150" />
@@ -11,6 +12,7 @@
     </el-table>
     <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList()" />
     <div class="clearfix" />
+    <el-divider content-position="left">报送参数配置</el-divider>
     <el-form ref="form" :model="reportParameter" :rules="rules" class="form-container" @submit.native.prevent>
       <el-row :gutter="10">
         <el-col :xs="24" :sm="12" :md="8">

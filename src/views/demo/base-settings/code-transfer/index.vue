@@ -1,5 +1,5 @@
 <template>
-  <div class="components-container">
+  <div class="page-container">
     <div class="filter-container">
       <el-form ref="form" :model="filter" :rules="rules" class="form-container" @submit.native.prevent>
         <el-row :gutter="10">
@@ -29,18 +29,18 @@
     </div>
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
       <el-table-column type="index" label="序号" align="center" min-width="50" />
-      <el-table-column prop="codeValue" label="代码编码" align="center" min-width="150" />
-      <el-table-column prop="codeType" label="代码类型" align="center" min-width="110" />
+      <el-table-column prop="codeValue" label="代码编码" align="center" min-width="100" />
+      <el-table-column prop="codeType" label="代码类型" align="center" min-width="150" />
       <el-table-column prop="originalCode" label="源数据代码" align="center" min-width="100" />
       <el-table-column prop="targetCode" label="目标代码" align="center" min-width="150" />
       <el-table-column prop="targetCodeName" label="目标代码名" align="center" min-width="100" />
-      <el-table-column prop="mapping" label="映射说明" align="center" min-width="100" />
+      <el-table-column prop="mapping" label="映射说明" align="center" min-width="150" />
       <el-table-column prop="groupCode" label="机构编码" align="center" min-width="100" />
       <el-table-column prop="remark" label="备注" align="center" min-width="100" />
       <el-table-column label="操作" align="center" fixed="right" min-width="100">
         <template>
-          <el-button icon="fa fa-edit" circle title="修改" @click.stop="()=>{}" />
-          <el-button icon="fa fa-trash-o" circle title="删除" @click.stop="()=>{}" />
+          <el-button size="mini" icon="fa fa-edit" circle title="修改" @click.stop="()=>{}" />
+          <el-button size="mini" icon="fa fa-trash-o" circle title="删除" @click.stop="()=>{}" />
         </template>
       </el-table-column>
     </el-table>

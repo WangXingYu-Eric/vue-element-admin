@@ -1,5 +1,5 @@
 <template>
-  <div class="components-container">
+  <div class="page-container">
     <div class="filter-container">
       <el-form ref="form" :model="filter" :rules="rules" class="form-container" @submit.native.prevent>
         <el-row :gutter="10">

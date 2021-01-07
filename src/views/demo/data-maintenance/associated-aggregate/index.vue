@@ -1,5 +1,5 @@
 <template>
-  <div class="components-container">
+  <div class="page-container">
     关联交易汇总维护
   </div>
 </template>
