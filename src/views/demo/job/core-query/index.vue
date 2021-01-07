@@ -36,7 +36,7 @@
       <el-table-column prop="dataRange" label="数据区间" align="center" min-width="100" />
       <el-table-column prop="dataStartTime" label="数据起始日期" align="center" min-width="100" />
       <el-table-column prop="dataEndTime" label="数据截止日期" align="center" min-width="100" />
-      <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="110" />
+      <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="120" />
       <el-table-column label="操作" align="center" fixed="right" min-width="100">
         <template>
           <el-button icon="fa fa-check-square-o" circle title="发送任务" @click.stop="()=>{}" />

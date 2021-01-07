@@ -9,6 +9,9 @@ const baseSettingsUserGroup = require('./base-settings/user-group')
 const jobCoreQuery = require('./job/core-query')
 const jobEastQuery = require('./job/east-query')
 
+// 数据系统采集
+const dataCollection = require('./data-collection')
+
 module.exports = [
   // 基础信息配置
   ...baseSettingsCheckRole,
@@ -19,5 +22,9 @@ module.exports = [
 
   // 任务管理
   ...jobCoreQuery,
-  ...jobEastQuery
+  ...jobEastQuery,
+
+  // 数据系统采集
+  ...dataCollection
+
 ]

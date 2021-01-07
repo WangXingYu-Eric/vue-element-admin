@@ -39,7 +39,7 @@
       <el-table-column prop="dataRange" label="数据区间" align="center" min-width="100" />
       <el-table-column prop="dataStartTime" label="数据起始日期" align="center" min-width="100" />
       <el-table-column prop="dataEndTime" label="数据截止日期" align="center" min-width="100" />
-      <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="110" />
+      <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="120" />
     </el-table>
     <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList()" />
   </div>
