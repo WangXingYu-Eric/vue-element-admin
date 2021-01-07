@@ -1,7 +1,7 @@
 const Mock = require('mockjs')
 
 const list1 = []
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 2; i++) {
   list1.push(Mock.mock({
     id: '@increment',
     jobNumber: /^[MS](0000015)\d{3}$/,
@@ -17,7 +17,7 @@ for (let i = 0; i < 20; i++) {
 }
 
 const list2 = []
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 3; i++) {
   list2.push(Mock.mock({
     id: '@increment',
     jobNumber: /^[MS](0000015)\d{3}$/,
