@@ -39,8 +39,8 @@
       <el-table-column prop="remark" label="备注" align="center" min-width="100" />
       <el-table-column label="操作" align="center" fixed="right" min-width="100">
         <template>
-          <el-button size="mini" icon="fa fa-edit" circle title="修改" @click.stop="()=>{}" />
-          <el-button size="mini" icon="fa fa-trash-o" circle title="删除" @click.stop="()=>{}" />
+          <el-button type="primary" size="mini" icon="fa fa-edit" circle title="修改" @click.stop="()=>{}" />
+          <el-button type="primary" size="mini" icon="fa fa-trash-o" circle title="删除" @click.stop="()=>{}" />
         </template>
       </el-table-column>
     </el-table>

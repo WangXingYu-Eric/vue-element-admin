@@ -6,7 +6,6 @@ const dataSplitCheckRouter =
     redirect: '/demo/data-split-check/index',
     hidden: false,
     component: Layout,
-    alwaysShow: false,
     name: 'DemoDataSplitCheck',
     children: [
       {

@@ -545,6 +545,22 @@ aside {
   margin: 20px 0;
 }
 
-.el-button--mini.is-circle {
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+//.el-table .el-input--mini .el-input__inner{
+//  height: 22px!important;
+//}
+
+.el-table .el-button--mini.is-circle {
   padding: 4px !important;
 }

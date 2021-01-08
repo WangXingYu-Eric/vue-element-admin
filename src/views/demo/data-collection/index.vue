@@ -74,7 +74,7 @@
 
 <script>
 import Pagination from '@/components/Pagination/index'
-import { fetchList } from '@/api/demo/data-collection'
+import { fetchList } from '@/api/demo/data-collection/default'
 export default {
   name: 'DataCollectionIndex',
   components: { Pagination },

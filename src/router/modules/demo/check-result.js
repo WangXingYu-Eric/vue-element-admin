@@ -6,7 +6,6 @@ const checkResultRouter =
     redirect: '/demo/check-result/index',
     hidden: false,
     component: Layout,
-    alwaysShow: false,
     name: 'DemoCheckResult',
     children: [
       {

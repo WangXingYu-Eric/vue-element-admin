@@ -6,7 +6,6 @@ const jobRouter =
     redirect: '/demo/job/east-query/index',
     hidden: false,
     component: Layout,
-    alwaysShow: true,
     name: 'DemoJob',
     meta: { title: 'demo.job.title', icon: '', affix: false, roles: ['admin'] },
     children: [

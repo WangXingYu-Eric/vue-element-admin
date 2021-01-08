@@ -6,7 +6,6 @@ const dataApprovalRouter =
     redirect: '/demo/data-approval/index',
     hidden: false,
     component: Layout,
-    alwaysShow: false,
     name: 'DemoDataApproval',
     children: [
       {

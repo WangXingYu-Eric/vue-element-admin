@@ -39,7 +39,7 @@
       <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="130" />
       <el-table-column label="操作" align="center" fixed="right" min-width="100">
         <template>
-          <el-button size="mini" icon="fa fa-check-square-o" circle title="发送任务" @click.stop="()=>{}" />
+          <el-button type="primary" size="mini" icon="fa fa-check-square-o" circle title="发送任务" @click.stop="()=>{}" />
         </template>
       </el-table-column>
     </el-table>

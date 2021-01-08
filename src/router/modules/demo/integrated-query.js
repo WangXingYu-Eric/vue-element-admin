@@ -6,7 +6,6 @@ const integratedQueryRouter =
     redirect: '/demo/integrated-query/data-status/index',
     hidden: false,
     component: Layout,
-    alwaysShow: true,
     name: 'DemoIntegratedQuery',
     meta: { title: 'demo.integratedQuery.title', icon: '', affix: false, roles: ['admin'] },
     children: [

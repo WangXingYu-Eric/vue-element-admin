@@ -6,7 +6,6 @@ const receiptRouter =
     redirect: '/demo/receipt/index',
     hidden: false,
     component: Layout,
-    alwaysShow: false,
     name: 'DemoReceipt',
     children: [
       {

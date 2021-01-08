@@ -6,7 +6,6 @@ const checkResultConfirmRouter =
     redirect: '/demo/check-result-confirm/index',
     hidden: false,
     component: Layout,
-    alwaysShow: false,
     name: 'DemoCheckResultConfirm',
     children: [
       {

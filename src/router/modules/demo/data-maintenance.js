@@ -6,7 +6,6 @@ const dataMaintenanceRouter =
     redirect: '/demo/data-maintenance/dongjiangao/index',
     hidden: false,
     component: Layout,
-    alwaysShow: true,
     name: 'DemoDataMaintenance',
     meta: { title: 'demo.dataMaintenance.title', icon: '', affix: false, roles: ['admin'] },
     children: [

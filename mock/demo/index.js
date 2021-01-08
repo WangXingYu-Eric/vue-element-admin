@@ -10,10 +10,12 @@ const jobCoreQuery = require('./job/core-query')
 const jobEastQuery = require('./job/east-query')
 
 // 数据系统采集
-const dataCollection = require('./data-collection')
+const dataCollectionIndex = require('./data-collection/index')
+const dataSourceSetting = require('./data-collection/data-source-setting')
 
 // 数据人工维护
 const dataMaintenanceDongjiangao = require('./data-maintenance/dongjiangao')
+const dataMaintenanceBranch = require('./data-maintenance/branch')
 
 module.exports = [
   // 基础信息配置
@@ -28,8 +30,10 @@ module.exports = [
   ...jobEastQuery,
 
   // 数据系统采集
-  ...dataCollection,
+  ...dataCollectionIndex,
+  ...dataSourceSetting,
 
   // 数据人工维护
-  ...dataMaintenanceDongjiangao
+  ...dataMaintenanceDongjiangao,
+  ...dataMaintenanceBranch
 ]

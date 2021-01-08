@@ -34,7 +34,12 @@ export default {
         }
       },
       dataCollection: {
-        title: '数据系统采集'
+        title: '数据系统采集',
+        children: {
+          dataSourceSetting: {
+            title: '数据源配置'
+          }
+        }
       },
       dataMaintenance: {
         title: '数据人工维护',

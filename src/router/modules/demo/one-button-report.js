@@ -6,7 +6,6 @@ const oneButtonReportRouter =
     redirect: '/demo/one-button-report/index',
     hidden: false,
     component: Layout,
-    alwaysShow: false,
     name: 'DemoOneButtonReport',
     children: [
       {
