@@ -23,11 +23,13 @@
           </el-col>
           <el-col :xs="24" :sm="12" :md="8" class="float-right">
             <el-button type="danger" icon="fa fa-stop" circle title="任务终止" class="float-right ml-10" @click.stop="handleFilter" />
+            <el-button type="primary" icon="fa fa-sticky-note-o" circle title="查看工作流" class="float-right" @click.stop="seevisual" />
             <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click.stop="handleFilter" />
           </el-col>
         </el-row>
       </el-form>
     </div>
+    <edit :title="edit.title" :visible="edit.visible" :type="edit.type" :model="edit.model" @setEditVisible="setEditVisible"  />
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
       <el-table-column type="selection" min-width="50" />
       <el-table-column type="index" label="序号" min-width="50" />
@@ -49,10 +51,10 @@
 
 import Pagination from '@/components/Pagination/index'
 import { fetchList } from '@/api/demo/job/east-query'
-
+import Edit from './edit'
 export default {
   name: 'CoreQueryIndex',
-  components: { Pagination },
+  components: { Pagination,Edit },
   data() {
     return {
       filter: {
@@ -67,6 +69,12 @@ export default {
         page: 1,
         limit: 10,
         total: 10
+      },
+      edit: {
+        title: '',
+        visible: false,
+        type: '',
+        model: {}
       }
     }
   },
@@ -74,6 +82,15 @@ export default {
     this.fetchList()
   },
   methods: {
+    seevisual() { // 添加
+      this.edit.title = '查看工作流'
+      this.setEditVisible(true)
+      this.edit.type = 'insert'
+      this.edit.model = {}
+    },
+    setEditVisible(value) { // 设置编辑框是否可见
+      this.edit.visible = value
+    },
     fetchList() {
       this.tableLoading = true
       fetchList(this.filter, this.pagination).then(response => {
@@ -85,6 +102,7 @@ export default {
         this.tableLoading = false
       })
     },
+
     handleFilter() {
       this.$refs.form.validate(valid => {
         if (valid) {
