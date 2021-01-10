@@ -53,6 +53,15 @@ export default {
         children: {
           dataSourceSetting: {
             title: '数据源配置'
+          },
+          mappingSetting: {
+            title: '数据采集映射配置'
+          },
+          mappingSettingEdit: {
+            title: '新建数据映射配置'
+          },
+          checkRule: {
+            title: '校验规则配置'
           }
         }
       },

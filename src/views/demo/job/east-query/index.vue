@@ -22,8 +22,8 @@
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8" class="float-right">
-            <el-button type="danger" icon="fa fa-stop" circle title="任务终止" class="float-right ml-10" @click="handleFilter" />
-            <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click="handleFilter" />
+            <el-button type="danger" icon="fa fa-stop" circle title="任务终止" class="float-right ml-10" @click.stop="handleFilter" />
+            <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click.stop="handleFilter" />
           </el-col>
         </el-row>
       </el-form>
@@ -41,7 +41,7 @@
       <el-table-column prop="dataEndTime" label="数据截止日期" align="center" min-width="100" />
       <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="130" />
     </el-table>
-    <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList()" />
+    <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList" />
   </div>
 </template>
 

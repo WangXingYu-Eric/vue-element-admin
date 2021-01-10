@@ -28,9 +28,9 @@
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8" class="float-right">
-            <el-button type="danger" icon="fa fa-trash-o" circle title="删除" class="float-right ml-10" @click="()=>{}" />
-            <el-button type="success" icon="fa fa-plus" circle title="增加" class="float-right" @click="()=>{}" />
-            <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click="handleFilter" />
+            <el-button type="danger" icon="fa fa-trash-o" circle title="删除" class="float-right ml-10" @click.stop="()=>{}" />
+            <el-button type="success" icon="fa fa-plus" circle title="增加" class="float-right" @click.stop="()=>{}" />
+            <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click.stop="handleFilter" />
           </el-col>
         </el-row>
       </el-form>
@@ -41,7 +41,7 @@
       <el-table-column prop="groupName" label="部门全称" align="center" min-width="150" />
       <el-table-column prop="tableName" label="表名" align="center" min-width="110" />
     </el-table>
-    <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList()" />
+    <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList" />
   </div>
 </template>
 

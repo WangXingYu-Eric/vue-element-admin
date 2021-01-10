@@ -23,10 +23,10 @@
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8" class="float-right">
-            <el-button type="primary" icon="fa fa-hourglass-end" circle title="系统采集完成" class="float-right ml-10" @click="handleFilter" />
-            <el-button type="primary" icon="fa fa-sticky-note-o" circle title="查看校验明细" class="float-right" @click="handleFilter" />
-            <el-button type="primary" icon="fa fa-hand-lizard-o" circle title="全表采集" class="float-right" @click="handleFilter" />
-            <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click="handleFilter" />
+            <el-button type="primary" icon="fa fa-hourglass-end" circle title="系统采集完成" class="float-right ml-10" @click.stop="handleFilter" />
+            <el-button type="primary" icon="fa fa-sticky-note-o" circle title="查看校验明细" class="float-right" @click.stop="handleFilter" />
+            <el-button type="primary" icon="fa fa-hand-lizard-o" circle title="全表采集" class="float-right" @click.stop="handleFilter" />
+            <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click.stop="handleFilter" />
           </el-col>
         </el-row>
       </el-form>
@@ -43,7 +43,7 @@
       <el-table-column prop="dataEndTime" label="数据截止日期" align="center" min-width="100" />
       <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="130" />
     </el-table>
-    <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList()" />
+    <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList" />
     <div class="clearfix" />
     <el-divider content-position="left">单表采集</el-divider>
     <el-form ref="collectionForm" :model="collection" :rules="collectionRule" class="form-container" @submit.native.prevent>
@@ -65,7 +65,7 @@
           </el-form-item>
         </el-col>
         <el-col :xs="24" :sm="12" :md="8" class="float-right">
-          <el-button type="primary" icon="fa fa-hand-lizard-o" circle title="单表采集" class="float-right" @click="()=>{}" />
+          <el-button type="primary" icon="fa fa-hand-lizard-o" circle title="单表采集" class="float-right" @click.stop="()=>{}" />
         </el-col>
       </el-row>
     </el-form>

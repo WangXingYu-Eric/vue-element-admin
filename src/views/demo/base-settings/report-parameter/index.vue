@@ -10,7 +10,7 @@
       <el-table-column prop="reportWay" label="上报方式" align="center" min-width="100" />
       <el-table-column prop="date" label="配置日期" align="center" min-width="100" />
     </el-table>
-    <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList()" />
+    <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList" />
     <div class="clearfix" />
     <el-divider content-position="left">报送参数配置</el-divider>
     <el-form ref="form" :model="reportParameter" :rules="rules" class="form-container" @submit.native.prevent>
@@ -78,9 +78,9 @@
           </el-form-item>
         </el-col>
         <el-col :xs="24" :sm="12" :md="8" class="float-right">
-          <el-button type="danger" icon="fa fa-trash-o" circle title="删除" class="float-right ml-10" @click="()=>{}" />
-          <el-button type="primary" icon="fa fa-edit" circle title="修改" class="float-right" @click="()=>{}" />
-          <el-button type="success" icon="fa fa-plus" circle title="增加" class="float-right" @click="()=>{}" />
+          <el-button type="danger" icon="fa fa-trash-o" circle title="删除" class="float-right ml-10" @click.stop="()=>{}" />
+          <el-button type="primary" icon="fa fa-edit" circle title="修改" class="float-right" @click.stop="()=>{}" />
+          <el-button type="success" icon="fa fa-plus" circle title="增加" class="float-right" @click.stop="()=>{}" />
         </el-col>
       </el-row>
     </el-form>
