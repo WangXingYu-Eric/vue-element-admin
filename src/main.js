@@ -20,6 +20,13 @@ import './utils/error-log' // error log
 
 import * as filters from './filters' // global filters
 
+// 自定义导入
+import echarts from 'echarts'
+import CompleteShow from '@/components/CompleteShow'
+
+Vue.prototype.$echarts = echarts
+Vue.component('complete-show', CompleteShow)
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api

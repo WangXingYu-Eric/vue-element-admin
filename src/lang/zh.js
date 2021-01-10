@@ -38,6 +38,12 @@ export default {
         children: {
           dataSourceSetting: {
             title: '数据源配置'
+          },
+          MappingSetting: {
+            title: '数据采集映射配置'
+          },
+          MappingSettingEdit: {
+            title: '新建数据映射配置'
           }
         }
       },

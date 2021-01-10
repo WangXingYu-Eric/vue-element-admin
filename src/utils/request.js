@@ -6,21 +6,47 @@ import { getToken } from '@/utils/auth'
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
-  // withCredentials: true, // send cookies when cross-domain requests
-  timeout: 5000 // request timeout
+  withCredentials: true, // send cookies when cross-domain requests
+  timeout: 60000, // request timeout
+  transformRequest: [function(data) {
+    // 转换成formData形式,不然后台gateway不能识别参数
+    const formData = new FormData()
+    const exclude = ['username', 'password', 'grant_type', 'tokenValue', 'files']
+    for (const param in data) {
+      if (exclude.some(value => value === param)) {
+        // 特殊参数不进行json转换
+        if (param === 'files') {
+          // 多文件上传单独处理
+          data[param].forEach(file => {
+            formData.append('files', file)
+          })
+        } else {
+          formData.append(param, data[param])
+        }
+      } else {
+        formData.append(param, JSON.stringify(data[param]))
+      }
+    }
+    return formData
+  }]
 })
 
 // request interceptor
 service.interceptors.request.use(
   config => {
+    // 请求前的操作
+    if (store.getters.token && !config.url.endsWith('/security-service/oauth/logout')) {
+      // 添加Authorization请求头
+      config.headers['Authorization'] = 'Bearer ' + getToken()
+    }
     // do something before request is sent
 
-    if (store.getters.token) {
-      // let each request carry token
-      // ['X-Token'] is a custom headers key
-      // please modify it according to the actual situation
-      config.headers['X-Token'] = getToken()
-    }
+    // if (store.getters.token) {
+    //   // let each request carry token
+    //   // ['X-Token'] is a custom headers key
+    //   // please modify it according to the actual situation
+    //   config.headers['X-Token'] = getToken()
+    // }
     return config
   },
   error => {

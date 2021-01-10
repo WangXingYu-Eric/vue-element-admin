@@ -23,8 +23,8 @@
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8" class="float-right">
-            <el-button type="primary" icon="fa fa-sticky-note-o" circle title="查看校验明细" class="float-right ml-10" @click="handleFilter1" />
-            <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click="handleFilter1" />
+            <el-button type="primary" icon="fa fa-sticky-note-o" circle title="查看校验明细" class="float-right ml-10" @click.stop="handleFilter1" />
+            <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click.stop="handleFilter1" />
           </el-col>
         </el-row>
       </el-form>
