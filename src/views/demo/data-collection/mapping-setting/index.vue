@@ -3,7 +3,7 @@
     <el-divider content-position="center">源数据表与目标数据表</el-divider>
     <el-row :gutter="10">
       <el-col :span="12">
-        <el-table ref="table1" v-loading="tableLoading1" :data="tableData1.filter(data => !search1 || data.tableName.toLowerCase().includes(search1.toLowerCase() || data.tableComment.toLowerCase().includes(search1.toLowerCase())))" height="500" max-height="500" stripe highlight-current-row class="width-100" @selection-change="selectionChange1">
+        <el-table ref="table1" v-loading="tableLoading1" :data="tableData1.filter(data => !search1 || data.tableName.toLowerCase().includes(search1.toLowerCase() || data.tableComment.toLowerCase().includes(search1.toLowerCase())))" height="500" max-height="500" row-key="id" stripe highlight-current-row class="width-100" @selection-change="selectionChange1">
           <el-table-column type="selection" min-width="50" />
           <el-table-column prop="tableName" label="表名" align="center" min-width="240">
             <template slot="header">
@@ -18,7 +18,7 @@
         </el-table>
       </el-col>
       <el-col :span="12">
-        <el-table ref="table2" v-loading="tableLoading2" :data="tableData2.filter(data => !search2 || data.tableName.toLowerCase().includes(search2.toLowerCase() || data.tableComment.toLowerCase().includes(search2.toLowerCase())))" height="500" max-height="500" stripe highlight-current-row class="width-100" @selection-change="selectionChange2">
+        <el-table ref="table2" v-loading="tableLoading2" :data="tableData2.filter(data => !search2 || data.tableName.toLowerCase().includes(search2.toLowerCase() || data.tableComment.toLowerCase().includes(search2.toLowerCase())))" height="500" max-height="500" row-key="id" stripe highlight-current-row class="width-100" @selection-change="selectionChange2">
           <el-table-column type="selection" min-width="50" />
           <el-table-column prop="tableName" label="表名" align="center" min-width="240">
             <template slot="header">

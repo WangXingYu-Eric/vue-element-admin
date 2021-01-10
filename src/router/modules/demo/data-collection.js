@@ -26,14 +26,21 @@ const dataCollectionRouter =
         path: 'mapping-setting',
         component: () => import('@/views/demo/data-collection/mapping-setting/index.vue'),
         name: 'MappingSettingIndex',
-        meta: { title: 'demo.dataCollection.children.MappingSetting.title', icon: '', affix: false, roles: ['admin'] }
+        meta: { title: 'demo.dataCollection.children.mappingSetting.title', icon: '', affix: false, roles: ['admin'] }
       },
       {
         hidden: true,
         path: 'mapping-setting/edit',
         component: () => import('@/views/demo/data-collection/mapping-setting/edit.vue'),
         name: 'MappingSettingEdit',
-        meta: { title: 'demo.dataCollection.children.MappingSettingEdit.title', icon: '', affix: false, roles: ['admin'] }
+        meta: { title: 'demo.dataCollection.children.mappingSettingEdit.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        hidden: true,
+        path: 'mapping-setting/check-rule',
+        component: () => import('@/views/demo/data-collection/mapping-setting/check-rule.vue'),
+        name: 'CheckRule',
+        meta: { title: 'demo.dataCollection.children.checkRule.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

@@ -10,7 +10,7 @@ export function fetchList(filter, pagination) {
 
 export function test(dataSourceSettingTestDTO) {
   return request({
-    url: 'http://localhost:5301/core-service/demo/data-collection/data-source-setting/test',
+    url: 'http://13810600758.qicp.vip/core-service/demo/data-collection/data-source-setting/test',
     method: 'post',
     data: { 'dataSourceSettingTestDTO': dataSourceSettingTestDTO }
   })

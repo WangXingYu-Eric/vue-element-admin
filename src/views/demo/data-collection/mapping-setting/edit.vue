@@ -3,14 +3,19 @@
     <el-divider content-position="center">源数据字段与目标数据字段</el-divider>
     <el-row :gutter="10">
       <el-col :span="12">
-        <el-table ref="table1" v-loading="tableLoading1" :data="tableData1.filter(data => !search1 || data.columnField.toLowerCase().includes(search1.toLowerCase() || data.columnComment.toLowerCase().includes(search1.toLowerCase())))" height="500" max-height="500" stripe highlight-current-row class="width-100" @selection-change="selectionChange1">
+        <el-table ref="table1" v-loading="tableLoading1" :data="tableData1.filter(data => !search1 || data.columnField.toLowerCase().includes(search1.toLowerCase() || data.columnComment.toLowerCase().includes(search1.toLowerCase())))" height="500" max-height="500" row-key="id" stripe highlight-current-row class="width-100" @selection-change="selectionChange1">
           <el-table-column type="selection" min-width="50" />
           <el-table-column prop="tableName" label="表名" align="center" min-width="260">
             <template slot="header">
               <el-input v-model="search1" size="mini" placeholder="输入关键字搜索" clearable />
             </template>
           </el-table-column>
-          <el-table-column prop="columnField" label="字段名称" align="center" min-width="200" />
+          <el-table-column prop="columnField" label="字段名称" align="center" min-width="200">
+            <template slot-scope="{row}">
+              <el-tag v-if="row.columnKey==='Yes'" type="danger">主键: <span>{{ row.columnField }}</span></el-tag>
+              <span v-else>{{ row.columnField }}</span>
+            </template>
+          </el-table-column>
           <el-table-column prop="columnType" label="类型" align="center" min-width="120" />
           <el-table-column prop="columnComment" label="描述" align="center" min-width="200">
             <template slot-scope="{row}">
@@ -20,14 +25,19 @@
         </el-table>
       </el-col>
       <el-col :span="12">
-        <el-table ref="table2" v-loading="tableLoading2" :data="tableData2.filter(data => !search2 || data.columnField.toLowerCase().includes(search2.toLowerCase() || data.columnComment.toLowerCase().includes(search2.toLowerCase())))" height="500" max-height="500" stripe highlight-current-row class="width-100" @selection-change="selectionChange2">
+        <el-table ref="table2" v-loading="tableLoading2" :data="tableData2.filter(data => !search2 || data.columnField.toLowerCase().includes(search2.toLowerCase() || data.columnComment.toLowerCase().includes(search2.toLowerCase())))" height="500" max-height="500" row-key="id" stripe highlight-current-row class="width-100" @selection-change="selectionChange2">
           <el-table-column type="selection" min-width="50" />
           <el-table-column prop="tableName" label="表名" align="center" min-width="260">
             <template slot="header">
               <el-input v-model="search2" size="mini" placeholder="输入关键字搜索" clearable />
             </template>
           </el-table-column>
-          <el-table-column prop="columnField" label="字段名称" align="center" min-width="200" />
+          <el-table-column prop="columnField" label="字段名称" align="center" min-width="200">
+            <template slot-scope="{row}">
+              <el-tag v-if="row.columnKey==='Yes'" type="danger">主键: <span>{{ row.columnField }}</span></el-tag>
+              <span v-else>{{ row.columnField }}</span>
+            </template>
+          </el-table-column>
           <el-table-column prop="columnType" label="类型" align="center" min-width="120" />
           <el-table-column prop="columnComment" label="描述" align="center" min-width="200">
             <template slot-scope="{row}">
@@ -38,9 +48,21 @@
       </el-col>
     </el-row>
     <el-row :gutter="10">
-      <el-button type="primary" class="fr mt-10 ml-10" @click="()=>{}">新建映射配置</el-button>
       <el-button
         type="primary"
+        class="fr mt-10 ml-10"
+        @click="()=>{
+          if (selectedRow1.length !== 0 || selectedRow1.length !== 0) {
+          } else {
+            this.$message({
+              message: '请选择要配置的数据字段',
+              type: 'warning'
+            })
+          }
+        }"
+      >新建映射配置</el-button>
+      <el-button
+        type="info"
         class="fr mt-10"
         @click="()=>{
           this.$store.dispatch('tagsView/delView', this.$route)
@@ -49,15 +71,16 @@
     </el-row>
     <el-divider content-position="center">映射配置列表</el-divider>
     <el-row :gutter="10">
-      <el-table ref="table3" v-loading="tableLoading3" :data="tableData3">
+      <el-table ref="table3" v-loading="tableLoading3" :data="tableData3" row-key="id" stripe highlight-current-row class="width-100">
         <el-table-column type="selection" min-width="50" />
         <el-table-column prop="sourceTableName" label="源数据表名" align="center" min-width="260" />
         <el-table-column prop="sourceColumnField" label="源字段名称" align="center" min-width="200" />
         <el-table-column prop="targetTableName" label="目标数据表名" align="center" min-width="260" />
         <el-table-column prop="targetColumnField" label="目标字段名称" align="center" min-width="200" />
         <el-table-column label="操作" align="center" fixed="right" min-width="100">
-          <template>
+          <template slot-scope="{row}">
             <el-button type="primary" size="mini" icon="fa fa-edit" circle title="修改" @click.stop="()=>{}" />
+            <el-button type="primary" size="mini" icon="fa fa-gear" circle title="校验规则配置" @click.stop="goCheckRule(row)" />
           </template>
         </el-table-column>
       </el-table>
@@ -145,6 +168,9 @@ export default {
     },
     selectionChange2(selection) {
       this.selectedRow2 = selection
+    },
+    goCheckRule(row) {
+      this.$router.push({ name: 'CheckRule', params: { sourceTableName: row.sourceTableName, sourceColumnField: row.sourceColumnField }})
     }
   }
 }

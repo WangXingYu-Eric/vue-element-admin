@@ -39,11 +39,14 @@ export default {
           dataSourceSetting: {
             title: '数据源配置'
           },
-          MappingSetting: {
+          mappingSetting: {
             title: '数据采集映射配置'
           },
-          MappingSettingEdit: {
+          mappingSettingEdit: {
             title: '新建数据映射配置'
+          },
+          checkRule: {
+            title: '校验规则配置'
           }
         }
       },
