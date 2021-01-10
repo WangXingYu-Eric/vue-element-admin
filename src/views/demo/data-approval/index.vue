@@ -41,63 +41,85 @@
       <el-table-column prop="dataRange" label="数据区间" align="center" min-width="100" />
       <el-table-column prop="dataStartTime" label="数据起始日期" align="center" min-width="100" />
       <el-table-column prop="dataEndTime" label="数据截止日期" align="center" min-width="100" />
-      <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="130" />
+      <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="140" />
+      <el-table-column label="操作" align="center" fixed="right" min-width="105">
+        <template slot-scope="{row}">
+          <el-button native-type icon="fa fa-pencil-square-o" circle title="部门审核意见" @click="seeMore(row)" />
+        </template>
+      </el-table-column>
+
     </el-table>
     <pagination v-show="pagination1.total>0" :total="pagination1.total" :page.sync="pagination1.page" :limit.sync="pagination1.limit" class="float-right" @pagination="fetchList1()" />
+    <edit :title="edit.title" :visible="edit.visible" :type="edit.type" :model="edit.model" @setEditVisible="setEditVisible" @queryList="handleFilter1" />
   </div>
 </template>
 
 <script>
-import Pagination from '@/components/Pagination/index'
-import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
-
-export default {
-  name: 'DataApprovalIndex',
-  components: { Pagination },
-  data() {
-    return {
-      filter1: {
-        reportType: '',
-        dataYear: '',
-        dataMonth: ''
-      },
-      rules1: {
-      },
-      tableData1: [],
-      tableLoading1: false,
-      pagination1: {
-        page: 1,
-        limit: 10,
-        total: 10
-      }
-
-    }
-  },
-  mounted() {
-    this.fetchList1()
-  },
-  methods: {
-    fetchList1() {
-      this.tableLoading1 = true
-      fetchList1(this.filter1, this.pagination1).then(response => {
-        this.tableData1 = response.data.list
-        this.pagination1.total = response.data.total
-        this.tableLoading1 = false
-      }).catch(error => {
-        console.log(error)
-        this.tableLoading1 = false
-      })
-    },
-    handleFilter1() {
-      this.$refs.form1.validate(valid => {
-        if (valid) {
-          this.fetchList1()
-        } else {
-          return false
+  import Pagination from '@/components/Pagination/index'
+  import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
+  import Edit from './edit'
+  export default {
+    name: 'DataApprovalIndex',
+    components: { Pagination,Edit },
+    data() {
+      return {
+        filter1: {
+          reportType: '',
+          dataYear: '',
+          dataMonth: ''
+        },
+        rules1: {
+        },
+        edit: {
+          title: '',
+          visible: false,
+          type: '',
+          model: {}
+        },
+        tableData1: [],
+        tableLoading1: false,
+        pagination1: {
+          page: 1,
+          limit: 10,
+          total: 10
         }
-      })
+
+      }
+    },
+    mounted() {
+      this.fetchList1()
+    },
+    methods: {
+      fetchList1() {
+        this.tableLoading1 = true
+        fetchList1(this.filter1, this.pagination1).then(response => {
+          this.tableData1 = response.data.list
+          this.pagination1.total = response.data.total
+          this.tableLoading1 = false
+        }).catch(error => {
+          console.log(error)
+          this.tableLoading1 = false
+        })
+      },
+      seeMore(row) {
+        this.edit.title = '各部门审核结果'
+        this.setEditVisible(true)
+        this.edit.type = 'insert'
+        this.edit.model = {}
+      },
+      setEditVisible(value) { // 设置编辑框是否可见
+        this.edit.visible = value
+      },
+      handleFilter1() {
+        this.$refs.form1.validate(valid => {
+          if (valid) {
+            this.fetchList1()
+          } else {
+            return false
+          }
+        })
+      }
     }
   }
-}
 </script>
 
