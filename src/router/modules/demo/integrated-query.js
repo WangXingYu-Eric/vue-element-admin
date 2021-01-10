@@ -32,6 +32,24 @@ const integratedQueryRouter =
         component: () => import('@/views/demo/integrated-query/audit-status/index.vue'),
         name: 'AuditStatusIndex',
         meta: { title: 'demo.integratedQuery.children.auditStatus.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        path: 'branch-reporting-log/index',
+        component: () => import('@/views/demo/integrated-query/branch-reporting-log/index.vue'),
+        name: 'BranchReportingLog',
+        meta: { title: 'demo.integratedQuery.children.branchReportingLog.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        path: 'rule-hit-statistics/index',
+        component: () => import('@/views/demo/integrated-query/rule-hit-statistics/index.vue'),
+        name: 'RuleHitStatistics',
+        meta: { title: 'demo.integratedQuery.children.ruleHitStatistics.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        path: 'report-problem-summary/index',
+        component: () => import('@/views/demo/integrated-query/report-problem-summary/index.vue'),
+        name: 'ReportProblemSummary',
+        meta: { title: 'demo.integratedQuery.children.reportProblemSummary.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

@@ -38,6 +38,36 @@ const baseSettingsRouter =
         component: () => import('@/views/demo/base-settings/user-group/index.vue'),
         name: 'UserGroupIndex',
         meta: { title: 'demo.baseSettings.children.userGroup.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        path: 'data-clean-config/index',
+        component: () => import('@/views/demo/base-settings/data-clean-config/index.vue'),
+        name: 'DataCleanConfig',
+        meta: { title: 'demo.baseSettings.children.dataCleanConfig.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        path: 'timed-task-management/index',
+        component: () => import('@/views/demo/base-settings/timed-task-management/index.vue'),
+        name: 'TimedTaskManagement',
+        meta: { title: 'demo.baseSettings.children.timedTaskManagement.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        path: 'dictionary/index',
+        component: () => import('@/views/demo/base-settings/dictionary/index.vue'),
+        name: 'dictionary',
+        meta: { title: 'demo.baseSettings.children.dictionary.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        path: 'role/index',
+        component: () => import('@/views/demo/base-settings/role/index.vue'),
+        name: 'Role',
+        meta: { title: 'demo.baseSettings.children.role.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        path: 'user/index',
+        component: () => import('@/views/demo/base-settings/user/index.vue'),
+        name: 'User',
+        meta: { title: 'demo.baseSettings.children.user.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

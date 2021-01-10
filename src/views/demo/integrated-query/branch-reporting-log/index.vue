@@ -34,6 +34,7 @@
       <el-table-column type="selection" min-width="50" />
       <el-table-column type="index" label="序号" min-width="50" />
       <el-table-column prop="jobNumber" label="任务号" align="center" min-width="100" />
+      <el-table-column prop="id" label="分支机构" align="center" min-width="100" />
       <el-table-column prop="batchNumber" label="批次号" align="center" min-width="100" />
       <el-table-column prop="jobType" label="任务类型" align="center" min-width="100" />
       <el-table-column prop="majorJob" label="所属主任务" align="center" min-width="100" />
@@ -45,42 +46,17 @@
     </el-table>
     <pagination v-show="pagination1.total>0" :total="pagination1.total" :page.sync="pagination1.page" :limit.sync="pagination1.limit" class="float-right" @pagination="fetchList1()" />
     <edit :title="edit.title" :visible="edit.visible" :type="edit.type" :model="edit.model" @setEditVisible="setEditVisible" @queryList="handleFilter1" />
-    <div class="clearfix" />
-    <el-divider content-position="left">特别表维护状态</el-divider>
-    <div class="filter-container">
-      <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
-        <line-chart :chart-data="lineChartData" />
-      </el-row>
-    </div>
   </div>
+
 </template>
 
 <script>
 import Pagination from '@/components/Pagination/index'
 import { fetchList1, fetchList2 } from '@/api/demo/data-maintenance/dongjiangao'
 import Edit from './edit'
-import LineChart from '@/views/demo/integrated-query/report-problem-summary/components/LineChart'
-const lineChartData = {
-  newVisitis: {
-    expectedData: [100, 120, 161, 134, 105, 160, 165],
-    actualData: [120, 82, 91, 154, 162, 140, 145]
-  },
-  messages: {
-    expectedData: [200, 192, 120, 144, 160, 130, 140],
-    actualData: [180, 160, 151, 106, 145, 150, 130]
-  },
-  purchases: {
-    expectedData: [80, 100, 121, 104, 105, 90, 100],
-    actualData: [120, 90, 100, 138, 142, 130, 130]
-  },
-  shoppings: {
-    expectedData: [130, 140, 141, 142, 145, 150, 160],
-    actualData: [120, 82, 91, 154, 162, 140, 130]
-  }
-}
 export default {
-  name: 'MaintenanceStatusIndex',
-  components: { Pagination, Edit,LineChart },
+  name: 'BranchReportingLog',
+  components: { Pagination, Edit },
   data() {
     return {
       filter1: {
@@ -119,7 +95,6 @@ export default {
         limit: 10,
         total: 10
       },
-      lineChartData: lineChartData.newVisitis,
       multipleSelection: []
     }
   },
@@ -128,9 +103,6 @@ export default {
     this.fetchList2()
   },
   methods: {
-    handleSetLineChartData(type) {
-      this.lineChartData = lineChartData[type]
-    },
     fetchList1() {
       this.tableLoading1 = true
       fetchList1(this.filter1, this.pagination1).then(response => {
@@ -216,4 +188,3 @@ export default {
     background:#0000ff;
   }
 </style>
-

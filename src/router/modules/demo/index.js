@@ -5,6 +5,7 @@ import jobRouter from './job'
 import dataCollectionRouter from './data-collection'
 import dataMaintenance from './data-maintenance'
 import dataSplitCheckRouter from './data-split-check'
+import noticeManagement from './notice-management'
 import checkResultRouter from './check-result'
 import checkResultConfirmRouter from './check-result-confirm'
 import dataAuditRouter from './data-audit'
@@ -24,6 +25,7 @@ const demoRouter = [
   dataMaintenance,
   // 数据拆分校验管理
   dataSplitCheckRouter,
+  noticeManagement,
   // 校验结果维护
   checkResultRouter,
   // 校验结果确认

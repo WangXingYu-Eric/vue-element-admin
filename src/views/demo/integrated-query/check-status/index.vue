@@ -46,13 +46,8 @@
     <pagination v-show="pagination1.total>0" :total="pagination1.total" :page.sync="pagination1.page" :limit.sync="pagination1.limit" class="float-right" @pagination="fetchList1()" />
     <edit :title="edit.title" :visible="edit.visible" :type="edit.type" :model="edit.model" @setEditVisible="setEditVisible" @queryList="handleFilter1" />
     <div class="clearfix" />
-    <el-divider content-position="left">操作轨迹</el-divider>
+    <el-divider content-position="left">校验明细项统计</el-divider>
     <div class="filter-container">
-      <!--<el-button type="primary" @click="goDoStatus">操作轨迹</el-button>-->
-      <el-button type="primary" @click="goAmountStatus">提数状态</el-button>
-      <el-button type="primary" @click="goPreserveStatus">维护状态</el-button>
-      <el-button type="primary" class="active" @click="goCheckStatus">校验状态</el-button>
-      <el-button type="primary" @click="goAuditStatus">审核状态</el-button>
       <el-table ref="table2" v-loading="tableLoading2" :data="tableData2" row-key="id" stripe highlight-current-row class="width-100">
         <el-table-column type="index" label="序号" min-width="50" />
         <el-table-column prop="userCode" label="所属部门" align="center" min-width="170" />

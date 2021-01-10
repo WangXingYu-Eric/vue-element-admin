@@ -8,6 +8,9 @@ export default {
           checkRole: {
             title: '检核规则管理'
           },
+          dataCleanConfig: {
+            title: '数据清洗规则配置'
+          },
           reportParameter: {
             title: '报送参数配置'
           },
@@ -19,6 +22,18 @@ export default {
           },
           userGroup: {
             title: '用户部门管理'
+          },
+          timedTaskManagement: {
+            title: '定时任务管理'
+          },
+          dictionary: {
+            title: '数据字典'
+          },
+          role: {
+            title: '角色管理'
+          },
+          user: {
+            title: '用户管理'
           }
         }
       },
@@ -82,6 +97,9 @@ export default {
       dataSplitCheck: {
         title: '数据拆分校验管理'
       },
+      noticeManagement: {
+        title: '公告管理'
+      },
       checkResult: {
         title: '校验结果维护'
       },
@@ -104,16 +122,25 @@ export default {
         title: '综合查询',
         children: {
           dataStatus: {
-            title: '提数状态'
+            title: '数据抽取状态'
           },
           maintenanceStatus: {
-            title: '维护状态'
+            title: '特别表维护状态'
           },
           checkStatus: {
-            title: '校验状态'
+            title: '校验明细项统计'
           },
           auditStatus: {
-            title: '审核状态'
+            title: '审核状态日志'
+          },
+          branchReportingLog: {
+            title: '分支机构上报日志'
+          },
+          ruleHitStatistics: {
+            title: '规则命中统计'
+          },
+          reportProblemSummary: {
+            title: '上报问题汇总'
           }
         }
       }
