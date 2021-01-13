@@ -6,7 +6,7 @@ for (let i = 0; i < 100; i++) {
     id: '@increment',
     a: '2021年3月',
     b: '4654654',
-    c: '@datetime("yyyy-MM-dd")',
+    c: '@datetime("2020-MM-dd")',
     d: '人工维护中'
   }))
 }

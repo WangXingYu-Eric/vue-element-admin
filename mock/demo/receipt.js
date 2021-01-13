@@ -1,23 +1,18 @@
 const Mock = require('mockjs')
 
 const list = []
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 2; i++) {
   list.push(Mock.mock({
-    id: '@increment',
-    batchNumber: /^[MS](0000015)\d{3}$/,
-    reportType: '集中采集',
-    dataGroup: '北京中科软',
-    dataStatus: '成功',
-    dataRange: '2021年1月',
-    dataStartTime: '@datetime("2020-MM-dd")',
-    dataEndTime: '@datetime("2020-MM-dd")',
-    dataProcessTime: '@datetime("2020-MM-dd")'
+    jobNumber: '2020年3月-2020年4月',
+    'batchNumber|1': ['文件生成成功','文件上传失败'],
+    jobType: /^[MS](0000015)\d{3}$/,
+    dataProcessTime: '2020-04-02'
   }))
 }
 
 module.exports = [
   {
-    url: '/demo/integrated-query/core-query/list',
+    url: '/demo/receipt/list',
     type: 'get',
     response: config => {
       const filter = JSON.parse(config.query.filter)

@@ -1,16 +1,16 @@
 const Mock = require('mockjs')
 
 const list = []
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 4; i++) {
   list.push(Mock.mock({
     id: '@increment',
     'codeValue|908776-908999': 908999,
-    'codeType|1': ['受理', '调查评论', '审批', '发放', '贷后管理'],
-    'originalCode|1-108': 108,
-    'targetCode|1-20': 20,
-    'targetCodeName|1': ['医疗', '伤残', '身故', '高残', '重大疾病', '特定疾病', '失业', '医疗'],
+    'codeType|1': ['受理', '调查评论', '审批', '发放','贷后管理'],
+    'originalCode|908776-908999': 908999,
+    'targetCode|908776-908999': 908999,
+    'targetCodeName|1': ['受理', '调查评论', '审批', '发放','贷后管理'],
     mapping: '@ctitle(4,8)',
-    'groupCode|1-80': 80,
+    'groupCode|1-80': 0,
 
     date: '@date'
   }))

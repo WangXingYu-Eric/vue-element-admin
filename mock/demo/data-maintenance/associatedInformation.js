@@ -10,9 +10,9 @@ for (let i = 0; i < 2; i++) {
     majorJob: /^[MS](0000015)\d{3}$/,
     'reportStatus|1': ['人工维护中', '待人工维护'],
     dataRange: '2017-2020年',
-    dataStartTime: '@datetime("yyyy-MM-dd")',
-    dataEndTime: '@datetime("yyyy-MM-dd")',
-    dataProcessTime: '@datetime("yyyy-MM-dd HH:mm:ss")'
+    dataStartTime: '@datetime("2020-MM-dd")',
+    dataEndTime: '@datetime("2020-MM-dd")',
+    dataProcessTime: '@datetime("2020-MM-dd HH:mm:ss")'
   }))
 }
 
@@ -39,9 +39,9 @@ for (let i = 0; i < 3; i++) {
     m: '中国***银行',
     n: '3055498814',
     o: /^[MS](0000015)\\d{3}$/,
-    p: '@datetime("yyyy-MM-dd")',
-    q: '@datetime("yyyy-MM-dd")',
-    r: '@datetime("yyyy-MM-dd")',
+    p: '@datetime("2020-MM-dd")',
+    q: '@datetime("2020-MM-dd")',
+    r: '@datetime("2020-MM-dd")',
     s: '*股',
     t: '10000元',
     u: 'CNY',

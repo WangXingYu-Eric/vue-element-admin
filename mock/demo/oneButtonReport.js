@@ -7,9 +7,9 @@ for (let i = 0; i < 2; i++) {
     jobNumber: /^[MS](0000015)\d{3}$/,
     a: '文件生成成功',
     b: '校验通过',
-    dataStartTime: '@datetime("yyyy-MM-dd")',
-    dataEndTime: '@datetime("yyyy-MM-dd")',
-    dataProcessTime: '@datetime("yyyy-MM-dd HH:mm:ss")'
+    dataStartTime: '@datetime("2020-MM-dd")',
+    dataEndTime: '@datetime("2020-MM-dd")',
+    dataProcessTime: '@datetime("2020-MM-dd HH:mm:ss")'
   }))
 }
 
@@ -22,7 +22,7 @@ for (let i = 0; i < 3; i++) {
     zdbm: '0000-000000-2021-02-01.zip',
     tqzt: '文件生成成功',
     tqsl: '数据包封装完毕',
-    rzms: '@datetime("yyyy-MM-dd")'
+    rzms: '@datetime("2020-MM-dd")'
   }))
 }
 

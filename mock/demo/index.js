@@ -32,6 +32,9 @@ const dataAudit = require('./data-audit')
 // 数据审批
 const dataApporval = require('./data-approval')
 
+// 回执处理
+const receipt = require('./receipt')
+
 // 特殊表维护
 const dataMaintenanceDongjiangao = require('./data-maintenance/dongjiangao')
 const dataMaintenanceBranch = require('./data-maintenance/branch')
@@ -88,5 +91,7 @@ module.exports = [
   ...oneButtonReport,
 
   // 综合查询
-  ...integratedQueryCoreQuery
+  ...integratedQueryCoreQuery,
+
+  ...receipt
 ]
