@@ -67,7 +67,7 @@
           </el-col>
           <el-col :xs="24" :sm="12" :md="8">
             <el-form-item label-width="120px" label="数据起始日期:" prop="dataYear">
-              <el-date-picker v-model="filter.dataYear" align="right" type="year" format="yyyy" placeholder="请选择数据起始日期" class="width-100" />
+              <el-date-picker v-model="filter.dataYear" align="right" type="month" format="yyyy-MM" placeholder="请选择数据起始日期" class="width-100" />
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8">
