@@ -33,7 +33,7 @@
           </el-row>
         </el-form>
       </div>
-      <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id"  stripe highlight-current-row @selection-change="selectionChange" @row-click="toggleSelection">
+      <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row @selection-change="selectionChange" @row-click="toggleSelection">
         <el-table-column type="selection" width="55" />
         <el-table-column label="角色名称" align="left" min-width="150">
           <template slot-scope="scope"><span>{{ scope.row.name }}</span></template>
@@ -43,17 +43,17 @@
         </el-table-column>
         <el-table-column label="状态" align="left" min-width="80">
           <template slot-scope="scope">
-            <el-tag effect="plain" :type="scope.row.status===0?'danger':'success'">{{scope.row.status }}</el-tag>
+            <el-tag effect="plain" :type="scope.row.status===0?'danger':'success'">{{ scope.row.status }}</el-tag>
           </template>
         </el-table-column>
         <el-table-column label="描述" align="left" min-width="250">
           <template slot-scope="scope">
-            {{scope.row.description}}
+            {{ scope.row.description }}
           </template>
         </el-table-column>
         <el-table-column label="备注" align="left" min-width="250">
           <template slot-scope="scope">
-            {{scope.row.remark}}
+            {{ scope.row.remark }}
 
           </template>
         </el-table-column>
@@ -92,7 +92,7 @@
 </template>
 
 <script>
-  import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
+import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
 import Pagination from '@/components/Pagination'
 import Edit from './edit'
 import ResourceSettings from './resourceSettings'
@@ -194,7 +194,7 @@ export default {
       this.edit.title = '编辑'
       this.setEditVisible(true)
       this.edit.type = 'update'
-      this.edit.model = deepClone(row)
+      // this.edit.model = deepClone(row)
     },
     queryList() { // 查询
       this.tableLoading = true
@@ -202,7 +202,6 @@ export default {
         this.tableData = result.data.list
         this.pagination.total = Number.parseInt(result.data.total)
         this.tableLoading = false
-
       })
     },
     resetQuery() { // 重置查询条件

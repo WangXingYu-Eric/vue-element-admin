@@ -28,7 +28,7 @@
           </el-row>
         </el-form>
       </div>
-      <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id"  stripe highlight-current-row @selection-change="selectionChange" @row-click="toggleSelection">
+      <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row @selection-change="selectionChange" @row-click="toggleSelection">
         <el-table-column type="selection" width="55" />
         <el-table-column type="expand">
           <template slot-scope="scope">
@@ -63,7 +63,7 @@
         </el-table-column>
         <el-table-column label="备注" align="center" min-width="250">
           <template slot-scope="scope">
-           {{scope.row.remark}}
+            {{ scope.row.remark }}
           </template>
         </el-table-column>
         <el-table-column label="创建时间" align="left" min-width="150">
@@ -94,7 +94,7 @@
 </template>
 
 <script>
-  import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
+import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
 import Pagination from '@/components/Pagination'
 import UserDetails from './userDetails'
 import Edit from './edit'
@@ -195,7 +195,6 @@ export default {
         this.tableData = result.data.list
         this.pagination.total = Number.parseInt(result.data.total)
         this.tableLoading = false
-
       })
     },
     resetQuery() { // 重置查询条件

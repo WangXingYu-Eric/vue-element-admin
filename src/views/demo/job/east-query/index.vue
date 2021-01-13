@@ -29,7 +29,7 @@
         </el-row>
       </el-form>
     </div>
-    <edit :title="edit.title" :visible="edit.visible" :type="edit.type" :model="edit.model" @setEditVisible="setEditVisible"  />
+    <edit :title="edit.title" :visible="edit.visible" :type="edit.type" :model="edit.model" @setEditVisible="setEditVisible" />
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
       <el-table-column type="selection" min-width="50" />
       <el-table-column type="index" label="序号" min-width="50" />
@@ -54,7 +54,7 @@ import { fetchList } from '@/api/demo/job/east-query'
 import Edit from './edit'
 export default {
   name: 'CoreQueryIndex',
-  components: { Pagination,Edit },
+  components: { Pagination, Edit },
   data() {
     return {
       filter: {

@@ -66,7 +66,7 @@ import BarChart from '@/views/demo/integrated-query/report-problem-summary/compo
 import Edit from './edit'
 export default {
   name: 'DataStatusIndex',
-  components: { Pagination, Edit,BarChart },
+  components: { Pagination, Edit, BarChart },
   data() {
     return {
       filter1: {

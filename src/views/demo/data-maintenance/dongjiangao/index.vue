@@ -54,11 +54,8 @@
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8">
-            <el-form-item label-width="90px" label="性别:" prop="gender">
-              <el-select v-model="filter2.gender" :placeholder="'请选择报送方式'" clearable class="width-100">
-                <el-option :key="'1'" :label="'男'" :value="'男'" />
-                <el-option :key="'2'" :label="'女'" :value="'女'" />
-              </el-select>
+            <el-form-item label-width="90px" label="工号:" prop="code">
+              <el-input v-model="filter2.code" :placeholder="'请输入工号'" clearable />
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8">
@@ -77,8 +74,8 @@
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8">
-            <el-form-item label-width="90px" label="出生日期:" prop="birthday">
-              <el-date-picker v-model="filter2.birthday" align="right" type="date" format="yyyy-MM-dd" placeholder="请选择出生日期" class="width-100" />
+            <el-form-item label-width="90px" label="内部机构号:" prop="nbjgh">
+              <el-input v-model="filter2.nbjgh" :placeholder="'请输入内部机构号'" clearable />
             </el-form-item>
           </el-col>
           <el-col :xs="24" :sm="12" :md="8" class="float-right">
@@ -92,16 +89,24 @@
     <el-table ref="table2" v-loading="tableLoading2" :data="tableData2" row-key="id" stripe highlight-current-row class="width-100">
       <el-table-column type="selection" min-width="50" />
       <el-table-column type="index" label="序号" min-width="50" />
-      <el-table-column prop="jobNumber" label="任务号" align="center" min-width="100" />
-      <el-table-column prop="batchNumber" label="批次号" align="center" min-width="100" />
-      <el-table-column prop="insuranceCorp" label="保险机构名称" align="center" min-width="100" />
-      <el-table-column prop="name" label="姓名" align="center" min-width="100" />
-      <el-table-column prop="userCode" label="员工代码" align="center" min-width="110" />
-      <el-table-column prop="gender" label="性别" align="center" min-width="100" />
-      <el-table-column prop="infoType" label="信息类别" align="center" min-width="100" />
-      <el-table-column prop="position" label="时任职务" align="center" min-width="100" />
-      <el-table-column prop="entryTime" label="入司时间" align="center" min-width="130" />
-      <el-table-column prop="leaveTime" label="李四时间" align="center" min-width="130" />
+      <el-table-column prop="jrjgmc" label="金融机构名称" align="center" min-width="130" />
+      <el-table-column prop="jrxkzh" label="金融许可证号" align="center" min-width="130" />
+      <el-table-column prop="jgdm" label="机构代码" align="center" min-width="130" />
+      <el-table-column prop="nbjgh" label="内部机构号" align="center" min-width="130" />
+      <el-table-column prop="name" label="姓名" align="center" min-width="130" />
+      <el-table-column prop="code" label="工号" align="center" min-width="130" />
+      <el-table-column prop="zjlb" label="证件类别" align="center" min-width="130" />
+      <el-table-column prop="zjhm" label="证件号码" align="center" min-width="130" />
+      <el-table-column prop="zw" label="职务" align="center" min-width="130" />
+      <el-table-column prop="startTime" label="开始日期" align="center" min-width="130" />
+      <el-table-column prop="endTime" label="结束日期" align="center" min-width="130" />
+      <el-table-column prop="pfTime" label="批复日期" align="center" min-width="130" />
+      <el-table-column prop="gwrzxx" label="过往任职信息" align="center" min-width="130" />
+      <el-table-column prop="cfxh" label="处罚序号" align="center" min-width="130" />
+      <el-table-column prop="cfjg" label="处罚机关" align="center" min-width="130" />
+      <el-table-column prop="cfzl" label="处罚种类" align="center" min-width="130" />
+      <el-table-column prop="cfyy" label="处罚原因" align="center" min-width="130" />
+      <el-table-column prop="cfje" label="处罚金额" align="center" min-width="130" />
     </el-table>
     <pagination v-show="pagination2.total>0" :total="pagination2.total" :page.sync="pagination2.page" :limit.sync="pagination2.limit" class="float-right" @pagination="fetchList2()" />
 

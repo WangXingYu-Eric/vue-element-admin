@@ -1,16 +1,18 @@
 import request from '@/utils/request'
 
-export function getStandardTableList() {
+export function fetchList1(filter, pagination) {
   return request({
-    url: 'http://13810600758.qicp.vip/core-service/demo/data-collection/mapping-setting/getStandardTableList',
-    method: 'post'
+    url: '/demo/data-collection/mapping-setting/list1',
+    method: 'get',
+    params: { 'filter': filter, 'pagination': pagination }
   })
 }
 
-export function getMatchTableList() {
+export function fetchList2(filter, pagination) {
   return request({
-    url: 'http://13810600758.qicp.vip/core-service/demo/data-collection/mapping-setting/getMatchTableList',
-    method: 'post'
+    url: '/demo/data-collection/mapping-setting/list2',
+    method: 'get',
+    params: { 'filter': filter, 'pagination': pagination }
   })
 }
 

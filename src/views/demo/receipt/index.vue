@@ -76,8 +76,8 @@
           <el-form ref="uploadForm" :rules="rules" :model="uploadModel" label-width="160px" class="dialog-form">
             <el-form-item label="监管报告导入">
               <el-upload
-                class="upload-demo"
                 ref="upload"
+                class="upload-demo"
                 :action="uploadUrl"
                 :multiple="true"
                 :accept="'.xls,.xlsx'"
@@ -87,14 +87,15 @@
                 :on-remove="onRemove"
                 :show-file-list="true"
                 :http-request="uploadFile"
-                style="border:1px dashed  #eee ;padding:20px;text-align: left;">
-                <el-button  slot="trigger"  size="small" type="primary">选择报告</el-button>
+                style="border:1px dashed  #eee ;padding:20px;text-align: left;"
+              >
+                <el-button slot="trigger" size="small" type="primary">选择报告</el-button>
                 <el-button style="margin-left: 10px;" size="small" type="success" @click="confirm2">导入</el-button>
               </el-upload>
             </el-form-item>
           </el-form>
         </el-col>
-        <el-col :xs="24" :sm="12" :md="24"  style="margin-bottom:20px;">
+        <el-col :xs="24" :sm="12" :md="24" style="margin-bottom:20px;">
           <el-form ref="form2" :model="filter2" :rules="rules1" class="form-container" @submit.native.prevent>
             <el-row :gutter="10">
               <el-col :xs="24" :sm="12" :md="8">
@@ -108,7 +109,7 @@
                   </el-select>
                 </el-form-item>
               </el-col>
-              <el-col :xs="24" :sm="12" :md="8"><el-button type="primary" >保存</el-button></el-col>
+              <el-col :xs="24" :sm="12" :md="8"><el-button type="primary">保存</el-button></el-col>
             </el-row>
           </el-form>
         </el-col>
@@ -134,7 +135,7 @@ export default {
         dataRange: ''
       },
       filter2: {
-        report: '',
+        report: ''
       },
       rules1: {
       },
@@ -145,15 +146,15 @@ export default {
         limit: 10,
         total: 10
       },
-      uploadModel:{},
-      editModel:{
-        audit:''
+      uploadModel: {},
+      editModel: {
+        audit: ''
       },
-      fullscreenLoading:false,
+      fullscreenLoading: false,
       uploadUrl: process.env.VUE_APP_GATEWAY + '/' + process.env.VUE_APP_CORE + '/retainedByBancassurance/importListAssignment',
       rloading: null,
       hasFile: false,
-      files: [],
+      files: []
     }
   },
   mounted() {
@@ -180,7 +181,7 @@ export default {
         }
       })
     },
-    //文件上传
+    // 文件上传
     onChange(file, fileList) {
       if (fileList.length > 0) {
         this.hasFile = true
@@ -220,38 +221,38 @@ export default {
       //          if (valid) {
       console.log(this.uploadUrl)
       this.$refs.upload.submit()
-      if(this.files.length==0){
+      if (this.files.length === 0) {
         this.$message({
-          message: "请选择文件",
+          message: '请选择文件',
           type: 'error'
         })
-        return false;
+        return false
       }
-      this.rLoading = this.openLoading()
-      var that=this;
+      // this.rLoading = this.openLoading()
+      // var that = this
       // 上传文件
-      request({
-        url: that.uploadUrl,
-        method: 'post',
-        contentType: 'multipart/form-data',
-        data: { 'files' : this.files  }
-      }).then(result => {
-        console.log(result.success);
-        if (result.success) {
-          this.$refs.upload.onSuccess()
-          this.rLoading.close()
-          this.$message({
-            message: '添加成功',
-            type: 'success'
-          })
-          this.dialogTitle = '';
-        } else {
-          this.$message({
-            message: result.message,
-            type: 'error'
-          })
-        }
-      })
+      // request({
+      //   url: that.uploadUrl,
+      //   method: 'post',
+      //   contentType: 'multipart/form-data',
+      //   data: { 'files': this.files }
+      // }).then(result => {
+      //   console.log(result.success)
+      //   if (result.success) {
+      //     this.$refs.upload.onSuccess()
+      //     this.rLoading.close()
+      //     this.$message({
+      //       message: '添加成功',
+      //       type: 'success'
+      //     })
+      //     this.dialogTitle = ''
+      //   } else {
+      //     this.$message({
+      //       message: result.message,
+      //       type: 'error'
+      //     })
+      //   }
+      // })
     }
   }
 }

@@ -3,117 +3,127 @@ export default {
     /* demo演示的国际化配置*/
     demo: {
       baseSettings: {
-        title: '基本信息配置',
+        title: '系统管理',
         children: {
-          checkRole: {
-            title: '检核规则管理'
-          },
-          dataCleanConfig: {
-            title: '数据清洗规则配置'
-          },
-          reportParameter: {
-            title: '报送参数配置'
-          },
-          codeTransfer: {
-            title: '码表转换配置'
-          },
           groupRole: {
             title: '部门权限管理'
           },
           userGroup: {
             title: '用户部门管理'
           },
-          timedTaskManagement: {
-            title: '定时任务管理'
-          },
-          dictionary: {
-            title: '数据字典'
-          },
           role: {
             title: '角色管理'
           },
           user: {
             title: '用户管理'
+          },
+          dictionary: {
+            title: '数据字典'
+          },
+          timedTaskManagement: {
+            title: '批处理设置'
+          },
+          noticeManagement: {
+            title: '公告管理'
+          }
+        }
+      },
+      package: {
+        title: '配置管理',
+        children: {
+          reportParameter: {
+            title: '报送参数配置'
+          },
+          codeTransfer: {
+            title: '码表转换配置'
+          },
+          checkRole: {
+            title: '校验规则配置'
+          },
+          dataSourceSetting: {
+            title: '业务系统数据源配置'
+          },
+          dataCleanConfig: {
+            title: '数据清洗规则配置'
           }
         }
       },
       job: {
-        title: '任务管理',
+        title: '上报任务管理',
         children: {
           eastQuery: {
-            title: 'East任务查询'
-          },
-          coreQuery: {
-            title: '核心推数查询'
+            title: 'EAST任务申请与查询'
           }
         }
       },
       dataCollection: {
-        title: '数据系统采集',
+        title: '数据采集',
         children: {
-          dataSourceSetting: {
-            title: '数据源配置'
-          },
           mappingSetting: {
-            title: '数据采集映射配置'
-          },
-          mappingSettingEdit: {
-            title: '新建数据映射配置'
-          },
-          checkRule: {
-            title: '校验规则配置'
+            title: '结构化校验'
           }
+          // mappingSettingEdit: {
+          //   title: '新建数据映射配置'
+          // },
+          // checkRule: {
+          //   title: '校验规则配置'
+          // }
         }
       },
       dataMaintenance: {
-        title: '数据人工维护',
+        title: '特殊表维护',
         children: {
           dongJianGao: {
-            title: '董监高维护'
+            title: '董监高信息维护'
           },
           branch: {
-            title: '分支机构维护'
+            title: '机构信息维护'
           },
           groupEquity: {
-            title: '机构股权维护'
+            title: '股东信息维护'
           },
           entrustedInvestment: {
-            title: '委托投资情况维护'
+            title: '内部分户账信息维护'
           },
           associatedInformation: {
-            title: '关联方信息维护'
+            title: '非底层资产投资信息维护'
           },
           importantAssociated: {
-            title: '重大关联交易维护'
-          },
-          associatedAggregate: {
-            title: '关联交易汇总'
-          },
-          bankAccountInformation: {
-            title: '银行账户信息维护'
-          },
-          autonomousInvestmentPositionDetails: {
-            title: '自主投资账户持仓明细维护'
-          },
-          autonomousInvestmentRecord: {
-            title: '自主投资交易流水维护'
-          },
-          autonomousInvestmentAggregate: {
-            title: '自主投资信息汇总维护'
+            title: '非底层资产持仓信息'
           }
+          // associatedAggregate: {
+          //   title: '关联交易汇总'
+          // },
+          // bankAccountInformation: {
+          //   title: '银行账户信息维护'
+          // },
+          // autonomousInvestmentPositionDetails: {
+          //   title: '自主投资账户持仓明细维护'
+          // },
+          // autonomousInvestmentRecord: {
+          //   title: '自主投资交易流水维护'
+          // },
+          // autonomousInvestmentAggregate: {
+          //   title: '自主投资信息汇总维护'
+          // }
         }
       },
       dataSplitCheck: {
-        title: '数据拆分校验管理'
+        title: '数据确认'
       },
-      noticeManagement: {
-        title: '公告管理'
-      },
-      checkResult: {
-        title: '校验结果维护'
-      },
-      checkResultConfirm: {
-        title: '校验结果确认'
+      dataCheck: {
+        title: '数据校验',
+        children: {
+          dataCheckOne: {
+            title: '数据校验'
+          },
+          checkResult: {
+            title: '校验结果维护'
+          },
+          checkResultConfirm: {
+            title: '校验结果确认'
+          }
+        }
       },
       dataAudit: {
         title: '数据审核'
@@ -130,6 +140,9 @@ export default {
       integratedQuery: {
         title: '综合查询',
         children: {
+          coreQuery: {
+            title: '核心推数查询'
+          },
           dataStatus: {
             title: '数据抽取状态'
           },
