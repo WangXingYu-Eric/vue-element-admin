@@ -38,8 +38,8 @@
       <el-table-column prop="dataEndTime" label="数据截止日期" align="center" min-width="100" />
       <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="130" />
       <el-table-column label="操作" align="center" fixed="right" min-width="100">
-        <template>
-          <el-button slot="trigger" size="small" type="primary">发起任务</el-button>
+        <template slot-scope="{row}">
+          <el-button slot="trigger" size="small" type="primary" @click="seeMore(row)">发起任务</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -95,6 +95,12 @@ export default {
           return false
         }
       })
+    },
+    seeMore() {
+      this.edit.title = '明细'
+      this.setEditVisible(true)
+      this.edit.type = 'insert'
+      this.edit.model = {}
     }
   }
 }

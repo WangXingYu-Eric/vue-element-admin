@@ -44,6 +44,45 @@
       <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="130" />
     </el-table>
     <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList" />
+    <div class="clearfix" />
+    <el-divider content-position="left">申请任务</el-divider>
+    <div class="filter-container">
+      <el-form ref="form" :model="filter" :rules="rules" class="form-container" @submit.native.prevent>
+        <el-row :gutter="10">
+          <el-col :xs="24" :sm="12" :md="8">
+            <el-form-item label-width="90px" label="任务类型:" prop="reportType">
+              <el-select v-model="filter.reportType" :placeholder="'请选择任务类型'" clearable class="width-100">
+                <el-option :key="'1'" :label="'主流程'" :value="'主流程'" />
+                <el-option :key="'2'" :label="'次流程'" :value="'次流程'" />
+              </el-select>
+            </el-form-item>
+          </el-col>
+          <el-col :xs="24" :sm="12" :md="8">
+            <el-form-item label-width="90px" label="报送方式:" prop="reportType">
+              <el-select v-model="filter.reportType" :placeholder="'请选择报送方式'" clearable class="width-100">
+                <el-option :key="'1'" :label="'集中采集'" :value="'集中采集'" />
+                <el-option :key="'2'" :label="'持续采集'" :value="'持续采集'" />
+              </el-select>
+            </el-form-item>
+          </el-col>
+          <el-col :xs="24" :sm="12" :md="8">
+            <el-form-item label-width="120px" label="数据起始日期:" prop="dataYear">
+              <el-date-picker v-model="filter.dataYear" align="right" type="year" format="yyyy" placeholder="请选择数据起始日期" class="width-100" />
+            </el-form-item>
+          </el-col>
+          <el-col :xs="24" :sm="12" :md="8">
+            <el-form-item label-width="120px" label="数据截止日期:" prop="dataMonth">
+              <el-date-picker v-model="filter.dataMonth" align="right" type="month" format="yyyy-MM" placeholder="请选择数据截止日期" class="width-100" />
+            </el-form-item>
+          </el-col>
+        </el-row>
+      </el-form>
+      <el-row>
+        <el-col :xs="24" :sm="12" :md="5" class="float-right" style="margin-bottom:20px;">
+          <el-button type="primary" @click="confirm">申请任务</el-button>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 

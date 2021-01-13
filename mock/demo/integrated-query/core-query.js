@@ -1,7 +1,7 @@
 const Mock = require('mockjs')
 
 const list = []
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 2; i++) {
   list.push(Mock.mock({
     id: '@increment',
     batchNumber: /^[MS](0000015)\d{3}$/,

@@ -86,9 +86,9 @@
       <el-table-column prop="tqsl" label="封装提示信息" align="center" min-width="110" />
       <el-table-column prop="rzms" label="封装时间" align="center" min-width="100" />
       <el-table-column label="操作" align="center" fixed="right" min-width="165">
-        <template>
-          <el-button slot="trigger" size="small" type="primary">下载</el-button>
-          <el-button slot="trigger" size="small" type="primary">自动上报</el-button>
+        <template slot-scope="{row}">
+          <el-button slot="trigger" size="small" type="primary" @click="seeMore(row)">下载</el-button>
+          <el-button slot="trigger" size="small" type="primary" @click="seeMore(row)">自动上报</el-button>
         </template>
       </el-table-column>
     </el-table>
