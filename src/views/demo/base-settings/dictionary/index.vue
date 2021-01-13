@@ -48,33 +48,31 @@
         </el-table-column>
         <el-table-column label="描述" align="left" min-width="250">
           <template slot-scope="scope">
-            {{scope.row.description}}
+            {{ scope.row.description }}
           </template>
         </el-table-column>
         <el-table-column label="备注" align="left" min-width="250">
           <template slot-scope="scope">
-            {{scope.row.remark}}
+            {{ scope.row.remark }}
           </template>
         </el-table-column>
         <el-table-column label="创建时间" align="left" min-width="150">
           <template slot-scope="scope"><span>{{ scope.row.createTime }}</span></template>
         </el-table-column>
-        <el-table-column label="创建人" align="left" min-width="100">
-        </el-table-column>
+        <el-table-column label="创建人" align="left" min-width="100" />
         <el-table-column label="修改时间" align="left" min-width="150">
           <template slot-scope="scope"><span>{{ scope.row.modifyTime?scope.row.modifyTime:'无' }}</span></template>
         </el-table-column>
-        <el-table-column label="修改人" align="left" min-width="100">
-        </el-table-column>
+        <el-table-column label="修改人" align="left" min-width="100" />
         <el-table-column label="操作" align="center" fixed="right" min-width="165">
           <template slot-scope="{row}">
-            <el-button native-type icon="fa fa-cog" circle title="配置字典项" @click.stop="setItemsDictionaryId(row.id), setItemsVisible(true)" />
-            <el-button native-type icon="fa fa-edit" circle title="查询" @click.stop="handleUpdate(row)" />
-            <el-button native-type icon="fa fa-trash-o" circle title="删除" @click.stop="handleRemove(row)" />
+            <el-button icon="fa fa-cog" circle title="配置字典项" @click.stop="setItemsDictionaryId(row.id), setItemsVisible(true)" />
+            <el-button icon="fa fa-edit" circle title="查询" @click.stop="handleUpdate(row)" />
+            <el-button icon="fa fa-trash-o" circle title="删除" @click.stop="handleRemove(row)" />
           </template>
         </el-table-column>
       </el-table>
-      <pagination class="float-right" v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" :page-sizes="[10, 50, 100]" @pagination="queryList" />
+      <pagination v-show="pagination.total>0" class="float-right" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" :page-sizes="[10, 50, 100]" @pagination="queryList" />
     </el-card>
     <edit :title="edit.title" :visible="edit.visible" :type="edit.type" :model="edit.model" @setEditVisible="setEditVisible" @queryList="queryList" />
     <items :visible="items.visible" :dictionary-id="items.dictionaryId" @setItemsVisible="setItemsVisible" />
@@ -124,7 +122,6 @@ export default {
 
   mounted() {
     this.$nextTick(() => {
-
       this.queryList()
     })
   },
@@ -166,7 +163,7 @@ export default {
       this.edit.title = '编辑'
       this.setEditVisible(true)
       this.edit.type = 'update'
-      this.edit.model = deepClone(row)
+      // this.edit.model = deepClone(row)
     },
     queryList() { // 查询
       this.tableLoading = true

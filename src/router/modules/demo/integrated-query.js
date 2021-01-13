@@ -10,6 +10,12 @@ const integratedQueryRouter =
     meta: { title: 'demo.integratedQuery.title', icon: '', affix: false, roles: ['admin'] },
     children: [
       {
+        path: 'core-query/index',
+        component: () => import('@/views/demo/integrated-query/core-query/index.vue'),
+        name: 'CoreQueryIndex',
+        meta: { title: 'demo.integratedQuery.children.coreQuery.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
         path: 'data-status/index',
         component: () => import('@/views/demo/integrated-query/data-status/index.vue'),
         name: 'DataStatusIndex',

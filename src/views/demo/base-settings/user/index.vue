@@ -28,7 +28,7 @@
           </el-row>
         </el-form>
       </div>
-      <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id"  stripe highlight-current-row @selection-change="selectionChange" @row-click="toggleSelection">
+      <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row @selection-change="selectionChange" @row-click="toggleSelection">
         <el-table-column type="selection" width="55" />
         <el-table-column type="expand">
           <template slot-scope="scope">
@@ -63,7 +63,7 @@
         </el-table-column>
         <el-table-column label="备注" align="center" min-width="250">
           <template slot-scope="scope">
-           {{scope.row.remark}}
+            {{ scope.row.remark }}
           </template>
         </el-table-column>
         <el-table-column label="创建时间" align="left" min-width="150">
@@ -80,9 +80,9 @@
         </el-table-column>
         <el-table-column label="操作" align="center" fixed="right" min-width="165">
           <template slot-scope="{row}">
-            <el-button native-type icon="fa fa-user" circle title="查询" @click.stop="setRoleSettingsVisible(true), setRoleSettingsUserId(row.id)" />
-            <el-button native-type icon="fa fa-edit" circle title="编辑" @click.stop="handleUpdate(row)" />
-            <el-button native-type icon="fa fa-trash-o" circle title="删除" @click.stop="handleRemove(row)" />
+            <el-button icon="fa fa-user" circle title="查询" @click.stop="setRoleSettingsVisible(true), setRoleSettingsUserId(row.id)" />
+            <el-button icon="fa fa-edit" circle title="编辑" @click.stop="handleUpdate(row)" />
+            <el-button icon="fa fa-trash-o" circle title="删除" @click.stop="handleRemove(row)" />
           </template>
         </el-table-column>
       </el-table>
@@ -94,7 +94,7 @@
 </template>
 
 <script>
-  import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
+import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
 import Pagination from '@/components/Pagination'
 import UserDetails from './userDetails'
 import Edit from './edit'
@@ -195,7 +195,6 @@ export default {
         this.tableData = result.data.list
         this.pagination.total = Number.parseInt(result.data.total)
         this.tableLoading = false
-
       })
     },
     resetQuery() { // 重置查询条件

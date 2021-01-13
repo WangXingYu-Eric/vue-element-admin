@@ -80,7 +80,7 @@ const lineChartData = {
 }
 export default {
   name: 'MaintenanceStatusIndex',
-  components: { Pagination, Edit,LineChart },
+  components: { Pagination, Edit, LineChart },
   data() {
     return {
       filter1: {

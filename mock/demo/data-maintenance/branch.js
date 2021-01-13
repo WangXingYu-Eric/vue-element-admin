@@ -20,14 +20,21 @@ const list2 = []
 for (let i = 0; i < 3; i++) {
   list2.push(Mock.mock({
     id: '@increment',
-    branchCode: /^(8637)(000)\d{3}$/,
-    'branchName|1': ['人寿保险公司', '汽车保险公司'],
-    'branchAddress|1': ['北京市朝阳区...', '北京市东城区...', '北京市海淀区...'],
-    'cardType|1': ['身份证', '未记录'],
-    'cardNo|1': ['@id', '未记录'],
-    foundedTime: '@datetime("yyyy-MM-dd")',
-    updateTime: '@datetime("yyyy-MM-dd")',
-    'status|1': ['正常', '废弃']
+    jrjgmc: '中国**银行',
+    qqfrsbm: 3055498814,
+    jgdm: 'MSIUF4955',
+    nbjgh: '465461879',
+    sjgljgdm: '7987546',
+    sjgljgmc: '中国***',
+    clsj: '@datetime("yyyy-MM-dd")',
+    yysj: '营业',
+    zcdq: '*****',
+    zcdz: '******',
+    zczb: '1000000000元',
+    yzbm: '100010',
+    frxm: '刘**',
+    zyfzrxm: '刘**'
+
   }))
 }
 

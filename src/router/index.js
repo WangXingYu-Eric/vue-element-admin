@@ -76,7 +76,7 @@ export const constantRoutes = [
     path: '/',
     component: Layout,
     hidden: true,
-    redirect: '/demo/base-settings/check-role/index',
+    redirect: '/demo/base-settings/group-role/index',
     name: 'DefaultPage',
     meta: { title: '默认页面', icon: '', affix: false, noCache: true, roles: ['admin'] }
   }

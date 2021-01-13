@@ -19,7 +19,7 @@
             </el-col>
           </el-row>
         </el-form>
-        <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id"  :max-height="315" stripe highlight-current-row>
+        <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" :max-height="315" stripe highlight-current-row>
           <el-table-column label="字典项名称" align="center" min-width="150">
             <template slot-scope="scope"><span>{{ scope.row.name }}</span></template>
           </el-table-column>
@@ -28,8 +28,8 @@
           </el-table-column>
           <el-table-column label="操作" align="center" fixed="right" min-width="110">
             <template slot-scope="{row}">
-              <el-button native-type icon="fa fa-edit" circle title="查询" @click.stop="handleUpdate(row)" />
-              <el-button native-type icon="fa fa-trash-o" circle title="删除" @click.stop="handleRemove(row)" />
+              <el-button icon="fa fa-edit" circle title="查询" @click.stop="handleUpdate(row)" />
+              <el-button icon="fa fa-trash-o" circle title="删除" @click.stop="handleRemove(row)" />
             </template>
           </el-table-column>
         </el-table>
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-  import { fetchList2 } from '@/api/demo/data-maintenance/dongjiangao'
+import { fetchList2 } from '@/api/demo/data-maintenance/dongjiangao'
 import Pagination from '@/components/Pagination'
 import { deepClone } from '@/utils'
 import Edit from './edit'

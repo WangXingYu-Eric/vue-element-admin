@@ -44,18 +44,51 @@
     </el-table>
     <pagination v-show="pagination1.total>0" :total="pagination1.total" :page.sync="pagination1.page" :limit.sync="pagination1.limit" class="float-right" @pagination="fetchList1()" />
     <div class="clearfix" />
-    <el-divider content-position="left">董监高信息列表</el-divider>
+    <el-divider content-position="left">机构信息信息列表</el-divider>
+    <div class="filter-container">
+      <el-form ref="form2" :model="filter2" :rules="rules2" class="form-container" @submit.native.prevent>
+        <el-row :gutter="10">
+          <el-col :xs="24" :sm="12" :md="8">
+            <el-form-item label-width="90px" label="机构名称:" prop="name">
+              <el-input v-model="filter2.jrjgmc" :placeholder="'请输入金融机构名称'" clearable />
+            </el-form-item>
+          </el-col>
+          <el-col :xs="24" :sm="12" :md="8">
+            <el-form-item label-width="90px" label="机构代码:" prop="jgdm">
+              <el-input v-model="filter2.jgdm" :placeholder="'请输入机构代码'" clearable />
+            </el-form-item>
+          </el-col>
+          <el-col :xs="24" :sm="12" :md="8">
+            <el-form-item label-width="90px" label="内部机构号:" prop="nbjgh">
+              <el-input v-model="filter2.nbjgh" :placeholder="'请输入内部机构号'" clearable />
+            </el-form-item>
+          </el-col>
+          <el-col :xs="24" :sm="12" :md="8" class="float-right">
+            <el-button type="primary" icon="fa fa-edit" circle title="修改" class="float-right ml-10" @click.stop="()=>{}" />
+            <el-button type="success" icon="fa fa-plus" circle title="增加" class="float-right" @click.stop="()=>{}" />
+            <el-button type="primary" icon="fa fa-search" circle title="查询" class="float-right" @click.stop="handleFilter2" />
+          </el-col>
+        </el-row>
+      </el-form>
+    </div>
     <el-table ref="table2" v-loading="tableLoading2" :data="tableData2" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column prop="jobNumber" label="分支机构编码" align="center" min-width="100" />
-      <el-table-column prop="batchNumber" label="分支机构名称" align="center" min-width="100" />
-      <el-table-column prop="insuranceCorp" label="疯子机构地址" align="center" min-width="100" />
-      <el-table-column prop="name" label="证件类型" align="center" min-width="100" />
-      <el-table-column prop="userCode" label="员工代码" align="center" min-width="110" />
-      <el-table-column prop="gender" label="性别" align="center" min-width="100" />
-      <el-table-column prop="infoType" label="信息类别" align="center" min-width="100" />
-      <el-table-column prop="position" label="时任职务" align="center" min-width="100" />
-      <el-table-column prop="entryTime" label="入司时间" align="center" min-width="130" />
-      <el-table-column prop="leaveTime" label="李四时间" align="center" min-width="130" />
+      <el-table-column type="selection" min-width="50" />
+      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column prop="jrjgmc" label="金融机构名称" align="center" min-width="130" />
+      <el-table-column prop="qqfrsbm" label="全球法人识别编码" align="center" min-width="150" />
+      <el-table-column prop="jgdm" label="机构代码" align="center" min-width="130" />
+      <el-table-column prop="nbjgh" label="内部机构号" align="center" min-width="130" />
+      <el-table-column prop="sjgljgdm" label="上级管理机构代码" align="center" min-width="150" />
+      <el-table-column prop="sjgljgmc" label="上级管理机构名称" align="center" min-width="150" />
+      <el-table-column prop="clsj" label="成立时间" align="center" min-width="130" />
+      <el-table-column prop="yysj" label="营业状态" align="center" min-width="130" />
+      <el-table-column prop="zcdq" label="注册地区" align="center" min-width="130" />
+      <el-table-column prop="zcdz" label="注册地址" align="center" min-width="130" />
+      <el-table-column prop="zczb" label="注册资本" align="center" min-width="130" />
+      <el-table-column prop="yzbm" label="邮政编码" align="center" min-width="130" />
+      <el-table-column prop="frxm" label="法定代表人姓名" align="center" min-width="130" />
+      <el-table-column prop="zyfzrxm" label="主要负责人姓名" align="center" min-width="130" />
+
     </el-table>
     <pagination v-show="pagination2.total>0" :total="pagination2.total" :page.sync="pagination2.page" :limit.sync="pagination2.limit" class="float-right" @pagination="fetchList2()" />
 
@@ -65,7 +98,7 @@
 <script>
 
 import Pagination from '@/components/Pagination/index'
-import { fetchList1, fetchList2 } from '@/api/demo/data-maintenance/dongjiangao'
+import { fetchList1, fetchList2 } from '@/api/demo/data-maintenance/branch'
 
 export default {
   name: 'BranchIndex',

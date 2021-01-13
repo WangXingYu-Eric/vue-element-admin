@@ -1,13 +1,12 @@
 /** 将demo演示的路由模块话,方便后期维护 **/
 
 import baseSettingsRouter from './base-settings'
+import packageRouter from './package'
 import jobRouter from './job'
 import dataCollectionRouter from './data-collection'
+import dataCheck from './data-check'
 import dataMaintenance from './data-maintenance'
 import dataSplitCheckRouter from './data-split-check'
-import noticeManagement from './notice-management'
-import checkResultRouter from './check-result'
-import checkResultConfirmRouter from './check-result-confirm'
 import dataAuditRouter from './data-audit'
 import dataApprovalRouter from './data-approval'
 import oneButtonReportRouter from './one-button-report'
@@ -16,21 +15,20 @@ import integratedQueryRouter from './integrated-query'
 import workflowRouter from './workflow'
 
 const demoRouter = [
-  // 基础信息配置
+  // 系统管理
   baseSettingsRouter,
-  // 任务管理
+  // 配置管理
+  packageRouter,
+  // 上报任务管理
   jobRouter,
-  // 数据系统采集
+  // 数据采集
   dataCollectionRouter,
-  // 数据人工维护
+  // 特殊表维护
   dataMaintenance,
-  // 数据拆分校验管理
+  // 数据确认
   dataSplitCheckRouter,
-  noticeManagement,
-  // 校验结果维护
-  checkResultRouter,
-  // 校验结果确认
-  checkResultConfirmRouter,
+  // 数据校验
+  dataCheck,
   // 数据审核
   dataAuditRouter,
   // 数据审批

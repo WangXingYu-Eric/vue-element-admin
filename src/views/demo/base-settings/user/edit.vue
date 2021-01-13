@@ -35,7 +35,7 @@
                   <el-radio :label="true">女</el-radio>
                 </el-radio-group>
               </el-form-item>
-             <!-- <el-form-item label="企业微信号" prop="userDetails.extend2">
+              <!-- <el-form-item label="企业微信号" prop="userDetails.extend2">
                 <el-input v-model="editModel.userDetails.extend2" placeholder="企业微信号" />
               </el-form-item>-->
               <el-form-item label="出生日期" prop="birthday">
@@ -138,18 +138,10 @@ export default {
   },
   methods: {
     queryDuplicateUserName(rule, value, callback) {
-      if (this.originUserName !== value.trim()) {
-
-      } else {
-        callback()
-      }
+      callback()
     },
     queryDuplicateExtend1(rule, value, callback) {
-      if (this.originExtend1 !== value.trim()) {
-
-      } else {
-        callback()
-      }
+      callback()
     },
     close() {
       this.$emit('setEditVisible', false)

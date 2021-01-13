@@ -4,7 +4,7 @@ import AppMain from '@/layout/components/AppMain'
 const dataCollectionRouter =
   {
     path: '/demo/data-collection',
-    redirect: '/demo/data-collection/index',
+    redirect: '/demo/data-collection/mapping-setting/index',
     hidden: false,
     component: Layout,
     alwaysShow: false,
