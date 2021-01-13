@@ -68,18 +68,18 @@ export default {
             }
           },
           indicator: [
-            { name: 'Sales', max: 10000 },
-            { name: 'Administration', max: 20000 },
-            { name: 'Information Technology', max: 20000 },
-            { name: 'Customer Support', max: 20000 },
-            { name: 'Development', max: 20000 },
-            { name: 'Marketing', max: 20000 }
+            { name: '普通技术校验等问题', max: 10000 },
+            { name: '数值比较校验、日期范围校验等问题', max: 20000 },
+            { name: '业务逻辑校验、复杂 SQL 校验等问题', max: 20000 },
+            { name: '总分校验等问题', max: 20000 },
+            { name: '完整性校验、唯一性校验等问题', max: 20000 },
+            { name: '同业业务校验等问题', max: 20000 }
           ]
         },
         legend: {
           left: 'center',
           bottom: '10',
-          data: ['Allocated Budget', 'Expected Spending', 'Actual Spending']
+          data: ['北京分公司', '上海分公司', '深圳分公司']
         },
         series: [{
           type: 'radar',
@@ -96,15 +96,15 @@ export default {
           data: [
             {
               value: [5000, 7000, 12000, 11000, 15000, 14000],
-              name: 'Allocated Budget'
+              name: '北京分公司'
             },
             {
               value: [4000, 9000, 15000, 15000, 13000, 11000],
-              name: 'Expected Spending'
+              name: '上海分公司'
             },
             {
               value: [5500, 11000, 12000, 15000, 12000, 12000],
-              name: 'Actual Spending'
+              name: '深圳分公司'
             }
           ],
           animationDuration: animationDuration

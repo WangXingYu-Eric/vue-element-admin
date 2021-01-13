@@ -84,6 +84,8 @@
 import { validUsername } from '@/utils/validate'
 // import LangSelect from '@/components/LangSelect'
 import SocialSign from './components/SocialSignin'
+// 粒子背景效果
+// import Particles from '@/components/nsf-components/particles'
 
 export default {
   name: 'Login',

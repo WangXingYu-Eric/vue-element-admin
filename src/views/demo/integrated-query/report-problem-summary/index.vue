@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <el-divider content-position="left">质检问题单量按时间统计 - 单次上报数据区间趋势图</el-divider>
+    <el-divider content-position="left">单次上报数据区间趋势图</el-divider>
     <el-form ref="queryForm" :model="filter" :rules="rules" class="form-container" @submit.native.prevent>
       <el-row :gutter="10">
         <el-col :xs="24" :sm="12" :md="8">
@@ -43,7 +43,7 @@
       </el-row>
     </div>
     <div class="clearfix" />
-    <el-divider content-position="left">质检点问题总量按质检行为大类统计 - 校验规则维度统计</el-divider>
+    <el-divider content-position="left">校验规则维度统计</el-divider>
     <el-form ref="queryForm" :model="filter" :rules="rules" class="form-container" @submit.native.prevent>
       <el-row :gutter="10">
         <el-col :xs="24" :sm="12" :md="8">
@@ -90,7 +90,7 @@
       </el-row>
     </div>
     <div class="clearfix" />
-    <el-divider content-position="left">质检行为大类统计 - 分公司上报问题统计</el-divider>
+    <el-divider content-position="left">分公司上报问题统计</el-divider>
     <el-form ref="queryForm" :model="filter" :rules="rules" class="form-container" @submit.native.prevent>
       <el-row :gutter="10">
         <el-col :xs="24" :sm="12" :md="8">

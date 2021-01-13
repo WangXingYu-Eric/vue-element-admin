@@ -40,12 +40,6 @@ const baseSettingsRouter =
         meta: { title: 'demo.baseSettings.children.dictionary.title', icon: '', affix: false, roles: ['admin'] }
       },
       {
-        path: 'timed-task-management/index',
-        component: () => import('@/views/demo/base-settings/timed-task-management/index.vue'),
-        name: 'TimedTaskManagement',
-        meta: { title: 'demo.baseSettings.children.timedTaskManagement.title', icon: '', affix: false, roles: ['admin'] }
-      },
-      {
         path: 'notice-management/index',
         component: () => import('@/views/demo/base-settings/notice-management/index.vue'),
         name: 'NoticeManagement',

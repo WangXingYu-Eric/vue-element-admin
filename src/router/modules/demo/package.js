@@ -44,6 +44,12 @@ const packageRouter =
         component: () => import('@/views/demo/package/workflow/index.vue'),
         name: 'WorkflowIndex',
         meta: { title: 'demo.workflow.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        path: 'timed-task-management/index',
+        component: () => import('@/views/demo/base-settings/timed-task-management/index.vue'),
+        name: 'TimedTaskManagement',
+        meta: { title: 'demo.baseSettings.children.timedTaskManagement.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

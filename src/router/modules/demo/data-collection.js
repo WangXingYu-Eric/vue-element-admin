@@ -72,6 +72,12 @@ const dataCollectionRouter =
         component: () => import('@/views/demo/data-collection/mapping-setting/check-rule.vue'),
         name: 'CheckRule',
         meta: { title: 'demo.dataCollection.children.checkRule.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        path: 'additional',
+        component: () => import('@/views/demo/data-collection/additional.vue'),
+        name: 'DataCollectionAdditional',
+        meta: { title: 'demo.dataCollection.children.additional.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

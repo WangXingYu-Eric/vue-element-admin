@@ -84,6 +84,9 @@ export default {
           },
           checkRule: {
             title: '校验规则配置'
+          },
+          additional: {
+            title: '数据补录'
           }
         }
       },

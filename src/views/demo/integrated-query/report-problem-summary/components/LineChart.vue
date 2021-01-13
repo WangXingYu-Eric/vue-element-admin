@@ -64,7 +64,7 @@ export default {
     setOptions({ expectedData, actualData } = {}) {
       this.chart.setOption({
         xAxis: {
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: ['一', '二', '三', '四', '五', '六', '七'],
           boundaryGap: false,
           axisTick: {
             show: false
@@ -90,10 +90,10 @@ export default {
           }
         },
         legend: {
-          data: ['expected', 'actual']
+          data: ['北京分公司', '上海分公司']
         },
         series: [{
-          name: 'expected', itemStyle: {
+          name: '北京分公司', itemStyle: {
             normal: {
               color: '#FF005A',
               lineStyle: {
@@ -109,7 +109,7 @@ export default {
           animationEasing: 'cubicInOut'
         },
         {
-          name: 'actual',
+          name: '上海分公司',
           smooth: true,
           type: 'line',
           itemStyle: {
