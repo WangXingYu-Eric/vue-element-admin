@@ -15,7 +15,22 @@ const mutations = {
   ADD_CACHED_VIEW: (state, view) => {
     if (state.cachedViews.includes(view.name)) return
     if (!view.meta.noCache) {
-      state.cachedViews.push(view.name)
+      console.log('=======================')
+      state.cachedViews.forEach(item => {
+        console.log(item)
+      })
+      console.log('===')
+      view.matched.forEach(item => {
+        console.log(item.name)
+      })
+      console.log('===')
+      view.matched.forEach(item => {
+        if (state.cachedViews.indexOf(item.name) < 0) {
+          state.cachedViews.push(item.name)
+          console.log(item.name)
+        }
+      })
+      // state.cachedViews.push(view.name)
     }
   },
 
@@ -49,8 +64,7 @@ const mutations = {
 
   DEL_ALL_VISITED_VIEWS: state => {
     // keep affix tags
-    const affixTags = state.visitedViews.filter(tag => tag.meta.affix)
-    state.visitedViews = affixTags
+    state.visitedViews = state.visitedViews.filter(tag => tag.meta.affix)
   },
   DEL_ALL_CACHED_VIEWS: state => {
     state.cachedViews = []

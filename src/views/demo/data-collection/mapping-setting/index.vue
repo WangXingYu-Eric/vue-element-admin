@@ -22,7 +22,7 @@
           <el-table-column type="selection" min-width="50" />
           <el-table-column prop="tableName" label="表名" align="center" min-width="240">
             <template slot="header">
-              <el-input v-model="search1" size="mini" placeholder="输入关键字搜索" clearable />
+              <el-input v-model="search2" size="mini" placeholder="输入关键字搜索" clearable />
             </template>
           </el-table-column>
           <el-table-column prop="tableComment" label="描述" align="center" min-width="200">
@@ -37,6 +37,21 @@
       <el-button type="primary" class="fr mt-10" @click="createMappingSetting">新建映射配置集</el-button>
     </el-row>
     <el-divider content-position="center">映射配置集列表</el-divider>
+    <el-row :gutter="10">
+      <el-col :span="24">
+        <el-table ref="table3" v-loading="tableLoading3" :data="tableData3" row-key="id" stripe highlight-current-row class="width-100">
+          <el-table-column type="selection" min-width="50" />
+          <el-table-column prop="table1" label="源数据表" align="center" min-width="120" />
+          <el-table-column prop="table2" label="目标数据表" align="center" min-width="120" />
+          <el-table-column label="操作" align="center" fixed="right" min-width="100">
+            <template>
+              <el-button type="primary" size="mini" icon="fa fa-edit" circle title="修改" @click.stop="()=>{}" />
+              <el-button type="danger" size="mini" icon="fa fa-trash-o" circle title="删除" @click.stop="()=>{}" />
+            </template>
+          </el-table-column>
+        </el-table>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -65,7 +80,23 @@ export default {
         limit: 10,
         total: 10
       },
-      selectedRow2: []
+      selectedRow2: [],
+      tableData3: [
+        {
+          table1: 'SYS_USER',
+          table2: 'CAR_GRLSKHXXB'
+        },
+        {
+          table1: 'SYS_GROUP,SYS_MENU',
+          table2: 'CAR_HZJGXXB'
+        }
+      ],
+      tableLoading3: false,
+      pagination3: {
+        page: 1,
+        limit: 10,
+        total: 10
+      }
     }
   },
   mounted() {

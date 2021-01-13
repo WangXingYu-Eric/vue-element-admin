@@ -37,12 +37,7 @@
       <el-table-column prop="mapping" label="映射说明" align="center" min-width="150" />
       <el-table-column prop="groupCode" label="机构编码" align="center" min-width="100" />
       <el-table-column prop="remark" label="备注" align="center" min-width="100" />
-      <el-table-column label="操作" align="center" fixed="right" min-width="100">
-        <template>
-          <el-button type="primary" size="mini" icon="fa fa-edit" circle title="修改" @click.stop="()=>{}" />
-          <el-button type="primary" size="mini" icon="fa fa-trash-o" circle title="删除" @click.stop="()=>{}" />
-        </template>
-      </el-table-column>
+      SYS_USER
     </el-table>
     <pagination v-show="pagination.total>0" :total="pagination.total" :page.sync="pagination.page" :limit.sync="pagination.limit" class="float-right" @pagination="fetchList" />
   </div>

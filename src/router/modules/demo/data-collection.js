@@ -1,4 +1,5 @@
 import Layout from '@/layout/index'
+import AppMain from '@/layout/components/AppMain'
 
 const dataCollectionRouter =
   {
@@ -10,6 +11,29 @@ const dataCollectionRouter =
     name: 'DemoDataCollection',
     meta: { title: 'demo.dataCollection.title', icon: '', affix: false, roles: ['admin'] },
     children: [
+      {
+        path: 'standard-data-base',
+        redirect: '/demo/data-collection/standard-database/finance/index',
+        hidden: false,
+        component: AppMain,
+        alwaysShow: false,
+        name: 'DataCollectionStandardDataBase',
+        meta: { title: 'demo.dataCollection.children.standardDataBase.title', icon: '', affix: false, roles: ['admin'] },
+        children: [
+          {
+            path: 'finance/index',
+            component: () => import('@/views/demo/data-collection/standard-database/finance/index'),
+            name: 'FinanceIndex',
+            meta: { title: 'demo.dataCollection.children.standardDataBase.children.finance.title', icon: '', affix: false, roles: ['admin'] }
+          },
+          {
+            path: 'car/index',
+            component: () => import('@/views/demo/data-collection/standard-database/car/index'),
+            name: 'CarIndex',
+            meta: { title: 'demo.dataCollection.children.standardDataBase.children.car.title', icon: '', affix: false, roles: ['admin'] }
+          }
+        ]
+      },
       {
         path: 'index',
         component: () => import('@/views/demo/data-collection/index.vue'),

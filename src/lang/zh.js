@@ -51,6 +51,17 @@ export default {
       dataCollection: {
         title: '数据系统采集',
         children: {
+          standardDataBase: {
+            title: '数据标准库',
+            children: {
+              finance: {
+                title: '财务金融标准'
+              },
+              car: {
+                title: '汽车金融标准'
+              }
+            }
+          },
           dataSourceSetting: {
             title: '数据源配置'
           },
@@ -152,6 +163,9 @@ export default {
             title: '上报问题汇总'
           }
         }
+      },
+      workflow: {
+        title: '流程管理'
       }
     },
     dashboard: '首页',

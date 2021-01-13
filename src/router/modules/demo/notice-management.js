@@ -6,12 +6,12 @@ const noticeManagement =
     redirect: '/demo/notice-management/index',
     hidden: false,
     component: Layout,
-    name: 'NoticeManagement',
+    name: 'DemoNoticeManagement',
     children: [
       {
         path: 'index',
         component: () => import('@/views/demo/notice-management/index.vue'),
-        name: 'NoticeManagement',
+        name: 'NoticeManagementIndex',
         meta: { title: 'demo.noticeManagement.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
