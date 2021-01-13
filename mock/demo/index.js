@@ -5,6 +5,8 @@ const baseSettingsUserGroup = require('./base-settings/user-group')
 const baseSettingDictionary = require('./base-settings/dictionary')
 const baseSettingTimedTaskManagement = require('./base-settings/timedTaskManagement')
 const baseSettingNoticeManagement = require('./base-settings/noticeManagement')
+const baseSettingRole = require('./base-settings/role')
+const baseSettingUser = require('./base-settings/user')
 
 // 配置管理
 const packageReportParameter = require('./package/report-parameter')
@@ -56,6 +58,8 @@ module.exports = [
   ...baseSettingDictionary,
   ...baseSettingTimedTaskManagement,
   ...baseSettingNoticeManagement,
+  ...baseSettingRole,
+  ...baseSettingUser,
 
   // 配置管理
   ...packageReportParameter,

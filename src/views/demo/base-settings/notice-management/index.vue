@@ -28,24 +28,15 @@
         </el-form>
       </div>
       <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row @selection-change="selectionChange" @row-click="toggleSelection">
-        <el-table-column type="selection" width="55" />
-        <el-table-column prop="jobNumber" label="标题" align="center" min-width="100" />
-        <el-table-column label="内容" align="center" min-width="150">
-          <template slot-scope="scope"><span>{{ scope.row.jobNumber }}</span></template>
-        </el-table-column>
-        <el-table-column label="发布时间" align="center" min-width="150">
-          <template slot-scope="scope"><span>{{ scope.row.batchNumber }}</span></template>
-        </el-table-column>
-        <el-table-column label="创建时间" align="left" min-width="150">
-          <template slot-scope="scope"><span>{{ scope.row.jobType }}</span></template>
-        </el-table-column>
-        <el-table-column label="创建人" align="left" min-width="100">
-          <template slot-scope="scope"><span>{{ scope.row.majorJob }}</span></template>
-        </el-table-column>
-        <el-table-column label="修改时间" align="left" min-width="150" prop="dataEndTime" />
-        <el-table-column label="修改人" align="left" min-width="100">
-          <template slot-scope="scope"><span>{{ scope.row.dataStartTime }}</span></template>
-        </el-table-column>
+        <el-table-column type="selection" min-width="50" />
+        <el-table-column type="index" label="序号" min-width="50" />
+        <el-table-column prop="a" label="内容" align="center" min-width="150" />
+        <el-table-column prop="b" label="发布时间" align="center" min-width="100" />
+        <el-table-column prop="f" label="创建时间" align="center" min-width="100" />
+        <el-table-column prop="g" label="创建人" align="center" min-width="100" />
+        <el-table-column prop="h" label="修改时间" align="center" min-width="100" />
+        <el-table-column prop="i" label="修改人" align="center" min-width="130" />
+
         <el-table-column label="操作" align="center" fixed="right" min-width="165">
           <template slot-scope="{row}">
             <el-button icon="fa fa-edit" circle title="编辑" @click.stop="handleUpdate(row)" />
@@ -62,7 +53,7 @@
 
 <script>
 import Pagination from '@/components/Pagination/index'
-import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
+import { fetchList1 } from '@/api/demo/base-settings/noticeManagement'
 import Edit from './edit'
 export default {
   name: 'NoticeManagement',

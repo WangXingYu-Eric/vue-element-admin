@@ -34,41 +34,17 @@
         </el-form>
       </div>
       <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row @selection-change="selectionChange" @row-click="toggleSelection">
-        <el-table-column type="selection" width="55" />
-        <el-table-column label="角色名称" align="left" min-width="150">
-          <template slot-scope="scope"><span>{{ scope.row.name }}</span></template>
-        </el-table-column>
-        <el-table-column label="角色编码" align="left" min-width="150">
-          <template slot-scope="scope"><span>{{ scope.row.code }}</span></template>
-        </el-table-column>
-        <el-table-column label="状态" align="left" min-width="80">
-          <template slot-scope="scope">
-            <el-tag effect="plain" :type="scope.row.status===0?'danger':'success'">{{ scope.row.status }}</el-tag>
-          </template>
-        </el-table-column>
-        <el-table-column label="描述" align="left" min-width="250">
-          <template slot-scope="scope">
-            {{ scope.row.description }}
-          </template>
-        </el-table-column>
-        <el-table-column label="备注" align="left" min-width="250">
-          <template slot-scope="scope">
-            {{ scope.row.remark }}
-
-          </template>
-        </el-table-column>
-        <el-table-column label="创建时间" align="left" min-width="150">
-          <template slot-scope="scope"><span>{{ scope.row.createTime }}</span></template>
-        </el-table-column>
-        <el-table-column label="创建人" align="left" min-width="100">
-          <template slot-scope="scope"><span>{{ scope.row.createUser }}</span></template>
-        </el-table-column>
-        <el-table-column label="修改时间" align="left" min-width="150">
-          <template slot-scope="scope"><span>{{ scope.row.modifyTime?scope.row.modifyTime:'无' }}</span></template>
-        </el-table-column>
-        <el-table-column label="修改人" align="left" min-width="100">
-          <template slot-scope="scope"><span>{{ scope.row.modifyUser }}</span></template>
-        </el-table-column>
+        <el-table-column type="selection" min-width="50" />
+        <el-table-column type="index" label="序号" min-width="50" />
+        <el-table-column prop="a" label="角色名称" align="center" min-width="100" />
+        <el-table-column prop="b" label="角色编码" align="center" min-width="100" />
+        <el-table-column prop="c" label="状态" align="center" min-width="100" />
+        <el-table-column prop="d" label="描述" align="center" min-width="100" />
+        <el-table-column prop="e" label="备注" align="center" min-width="110" />
+        <el-table-column prop="f" label="创建时间" align="center" min-width="100" />
+        <el-table-column prop="g" label="创建人" align="center" min-width="100" />
+        <el-table-column prop="h" label="修改时间" align="center" min-width="100" />
+        <el-table-column prop="i" label="修改人" align="center" min-width="130" />
         <el-table-column label="操作" align="center" fixed="right" min-width="120">
           <template slot-scope="{row}">
             <el-dropdown trigger="click" @command="handleOperate">
@@ -92,7 +68,7 @@
 </template>
 
 <script>
-import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
+import { fetchList1 } from '@/api/demo/base-settings/role'
 import Pagination from '@/components/Pagination'
 import Edit from './edit'
 import ResourceSettings from './resourceSettings'

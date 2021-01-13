@@ -22,6 +22,29 @@
               <el-date-picker v-model="filter.dataMonth" align="right" type="month" format="yyyy-MM" placeholder="请选择数据月份" class="width-100" />
             </el-form-item>
           </el-col>
+          <el-col :sm="12" :lg="20">
+            <el-form ref="uploadForm" :rules="rules" :model="uploadModel" label-width="160px" class="dialog-form">
+              <el-form-item label="数据导入">
+                <el-upload
+                  ref="upload"
+                  class="upload-demo"
+                  :action="uploadUrl"
+                  :multiple="true"
+                  :accept="'.xls,.xlsx'"
+                  :auto-upload="false"
+                  :on-change="onChange"
+                  :on-success="onSuccess"
+                  :on-remove="onRemove"
+                  :show-file-list="true"
+                  :http-request="uploadFile"
+                  style="border:1px dashed  #eee ;padding:20px;text-align: left;"
+                >
+                  <el-button slot="trigger" size="small" type="primary">选择数据</el-button>
+                  <el-button style="margin-left: 10px;" size="small" type="success" @click="confirm2">导入</el-button>
+                </el-upload>
+              </el-form-item>
+            </el-form>
+          </el-col>
           <el-col :xs="24" :sm="12" :md="8" class="float-right">
             <el-button type="primary" icon="fa fa-hourglass-end" circle title="系统采集完成" class="float-right ml-10" @click.stop="handleFilter" />
             <el-button type="primary" icon="fa fa-sticky-note-o" circle title="查看校验明细" class="float-right" @click.stop="handleFilter" />

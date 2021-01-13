@@ -4,24 +4,24 @@ const list = []
 for (let i = 0; i < 1; i++) {
   list.push(Mock.mock({
     id: '@increment',
-    a: '状态',
-    b: 'state',
-    c: '启用',
-    d: '禁用、启用',
+    a: 'admin',
+    b: '1325995134@163.com',
+    c: '155****9119',
+    d: '启用',
     e: '2020-01-10',
     f: '2020-01-10',
-    g: '@name',
+    g: '0',
     h: '',
-    i: '',
+    i: '@name',
     j: '2020-01-10',
-    k: '',
+    k: '0',
     l: ''
   }))
 }
 
 module.exports = [
   {
-    url: '/demo/base-settings/dictionary/list',
+    url: '/demo/base-settings/user/list',
     type: 'get',
     response: config => {
       const filter = JSON.parse(config.query.filter)

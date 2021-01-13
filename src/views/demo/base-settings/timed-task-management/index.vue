@@ -29,38 +29,19 @@
         @selection-change="selectionChange"
         @row-click="toggleSelection"
       >
-        <el-table-column type="selection" width="55" />
-        <el-table-column prop="jobNumber" label="服务名称" align="left" min-width="150" />
-        <el-table-column label="对象名称" align="left" min-width="150">
-          <template slot-scope="scope"><span>{{ scope.row.batchNumber }}</span></template>
-        </el-table-column>
-        <el-table-column label="参数" align="left" min-width="250">
-          <template slot-scope="scope">
-            <complete-show :complete-str="scope.row.params?scope.row.params:'无'" :min-width="250" />
-          </template>
-        </el-table-column>
-        <el-table-column label="周期表达式" align="left" min-width="150">
-          <template slot-scope="scope"><span>{{ scope.row.jobType }}</span></template>
-        </el-table-column>
-        <el-table-column label="状态" align="left" min-width="80">
-          <template slot-scope="scope">
-            <el-tag effect="plain" :type="scope.row.jobType===0?'danger':'success'">{{ scope.row.jobType }}</el-tag>
-          </template>
-        </el-table-column>
-        <el-table-column label="描述" align="left" min-width="250">
-          <template slot-scope="scope">
-            <complete-show :complete-str="scope.row.description?scope.row.description:'无'" :min-width="250" />
-          </template>
-        </el-table-column>
-        <el-table-column label="备注" align="left" min-width="250">
-          <template slot-scope="scope">
-            <complete-show :complete-str="scope.row.remark?scope.row.remark:'无'" :min-width="250" />
-          </template>
-        </el-table-column>
-        <el-table-column label="创建时间" align="left" min-width="150" prop="dataEndTime" />
-        <el-table-column label="创建人" align="left" min-width="100" prop="dataEndTime" />
-        <el-table-column label="修改时间" align="left" min-width="150" prop="dataEndTime" />
-        <el-table-column label="修改人" align="left" min-width="100" prop="dataEndTime" />
+        <el-table-column type="selection" min-width="50" />
+        <el-table-column type="index" label="序号" min-width="50" />
+        <el-table-column prop="a" label="服务名称" align="center" min-width="100" />
+        <el-table-column prop="b" label="对象名称" align="center" min-width="100" />
+        <el-table-column prop="c" label="参数" align="center" min-width="100" />
+        <el-table-column prop="d" label="周期表达式" align="center" min-width="100" />
+        <el-table-column prop="e" label="状态" align="center" min-width="110" />
+        <el-table-column prop="j" label="描述" align="center" min-width="110" />
+        <el-table-column prop="k" label="备注" align="center" min-width="110" />
+        <el-table-column prop="f" label="创建时间" align="center" min-width="100" />
+        <el-table-column prop="g" label="创建人" align="center" min-width="100" />
+        <el-table-column prop="h" label="修改时间" align="center" min-width="100" />
+        <el-table-column prop="i" label="修改人" align="center" min-width="130" />
         <el-table-column label="操作" align="center" fixed="right" min-width="120">
           <template slot-scope="{row}">
             <el-dropdown trigger="click" @command="handleOperate">
@@ -83,7 +64,7 @@
 
 <script>
 import Pagination from '@/components/Pagination/index'
-import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
+import { fetchList1 } from '@/api/demo/base-settings/timedTaskManagement.js'
 import Edit from './edit'
 export default {
   name: 'Job',
