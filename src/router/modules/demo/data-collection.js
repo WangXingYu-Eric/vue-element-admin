@@ -40,12 +40,12 @@ const dataCollectionRouter =
         name: 'DataCollectionIndex',
         meta: { title: 'demo.dataCollection.title', icon: '', affix: false, roles: ['admin'] }
       },
-      {
-        path: 'data-source-setting',
-        component: () => import('@/views/demo/data-collection/data-source-setting/index.vue'),
-        name: 'DataSourceSettingIndex',
-        meta: { title: 'demo.dataCollection.children.dataSourceSetting.title', icon: '', affix: false, roles: ['admin'] }
-      },
+      // {
+      //   path: 'data-source-setting',
+      //   component: () => import('@/views/demo/data-collection/data-source-setting/index.vue'),
+      //   name: 'DataSourceSettingIndex',
+      //   meta: { title: 'demo.dataCollection.children.dataSourceSetting.title', icon: '', affix: false, roles: ['admin'] }
+      // },
       {
         path: 'mapping-setting',
         component: () => import('@/views/demo/data-collection/mapping-setting/index.vue'),
