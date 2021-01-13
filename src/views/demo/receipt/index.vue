@@ -53,8 +53,8 @@
     </div>
     <el-divider content-position="left">上报信息列表</el-divider>
     <el-table ref="table1" v-loading="tableLoading1" :data="tableData1" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column type="index" label="序号" min-width="80" />
       <el-table-column prop="jobNumber" label="数据区间" align="center" min-width="100" />
       <el-table-column prop="batchNumber" label="文件状态" align="center" min-width="100" />
       <el-table-column prop="jobType" label="任务号" align="center" min-width="100" />

@@ -28,8 +28,8 @@
         </el-form>
       </div>
       <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row @selection-change="selectionChange" @row-click="toggleSelection">
-        <el-table-column type="selection" min-width="50" />
-        <el-table-column type="index" label="序号" min-width="50" />
+        <el-table-column type="selection" min-width="80" />
+        <el-table-column type="index" label="序号" min-width="80" />
         <el-table-column prop="a" label="内容" align="center" min-width="150" />
         <el-table-column prop="b" label="发布时间" align="center" min-width="100" />
         <el-table-column prop="f" label="创建时间" align="center" min-width="100" />

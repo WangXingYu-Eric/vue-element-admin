@@ -23,8 +23,8 @@
       </el-form>
     </div>
     <el-table ref="table1" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column type="index" label="序号" min-width="80" />
       <el-table-column prop="workflowName" label="流程名称" align="center" min-width="100" />
       <el-table-column prop="workflowCode" label="流程编码" align="center" min-width="100" />
       <el-table-column prop="workflowDescription" label="描述" align="center" min-width="100" />
@@ -118,7 +118,7 @@ export default {
       })
     },
     editHandler(row) {
-      this.iframeSrc = 'http://localhost:5701/#/editor/' + row.id
+      this.iframeSrc = 'http://http://192.168.223.89:5301:5701/#/editor/' + row.id
       this.visible = true
     }
   }

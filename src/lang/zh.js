@@ -67,6 +67,9 @@ export default {
               },
               car: {
                 title: '汽车金融标准'
+              },
+              details: {
+                title: '表结构详情'
               }
             }
           },
@@ -181,7 +184,7 @@ export default {
         }
       },
       workflow: {
-        title: '流程管理'
+        title: '流程配置管理'
       }
     },
     dashboard: '首页',

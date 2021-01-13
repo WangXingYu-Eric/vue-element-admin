@@ -36,8 +36,8 @@
       </el-form>
     </div>
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column type="index" label="序号" align="center" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column type="index" label="序号" align="center" min-width="80" />
       <el-table-column prop="groupName" label="部门全称" align="center" min-width="150" />
       <el-table-column prop="tableName" label="表名" align="center" min-width="110" />
     </el-table>

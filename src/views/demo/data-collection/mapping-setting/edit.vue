@@ -4,7 +4,7 @@
     <el-row :gutter="10">
       <el-col :span="12">
         <el-table ref="table1" v-loading="tableLoading1" :data="tableData1.filter(data => !search1 || data.columnField.toLowerCase().includes(search1.toLowerCase() || data.columnComment.toLowerCase().includes(search1.toLowerCase())))" height="500" max-height="500" row-key="id" stripe highlight-current-row class="width-100" @selection-change="selectionChange1">
-          <el-table-column type="selection" min-width="50" />
+          <el-table-column type="selection" min-width="80" />
           <el-table-column prop="tableName" label="表名" align="center" min-width="260">
             <template slot="header">
               <el-input v-model="search1" size="mini" placeholder="输入关键字搜索" clearable />
@@ -26,7 +26,7 @@
       </el-col>
       <el-col :span="12">
         <el-table ref="table2" v-loading="tableLoading2" :data="tableData2.filter(data => !search2 || data.columnField.toLowerCase().includes(search2.toLowerCase() || data.columnComment.toLowerCase().includes(search2.toLowerCase())))" height="500" max-height="500" row-key="id" stripe highlight-current-row class="width-100" @selection-change="selectionChange2">
-          <el-table-column type="selection" min-width="50" />
+          <el-table-column type="selection" min-width="80" />
           <el-table-column prop="tableName" label="表名" align="center" min-width="260">
             <template slot="header">
               <el-input v-model="search2" size="mini" placeholder="输入关键字搜索" clearable />
@@ -72,7 +72,7 @@
     <el-divider content-position="center">映射配置列表</el-divider>
     <el-row :gutter="10">
       <el-table ref="table3" v-loading="tableLoading3" :data="tableData3" row-key="id" stripe highlight-current-row class="width-100">
-        <el-table-column type="selection" min-width="50" />
+        <el-table-column type="selection" min-width="80" />
         <el-table-column prop="sourceTableName" label="源数据表名" align="center" min-width="260" />
         <el-table-column prop="sourceColumnField" label="源字段名称" align="center" min-width="200" />
         <el-table-column prop="targetTableName" label="目标数据表名" align="center" min-width="260" />

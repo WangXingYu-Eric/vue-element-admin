@@ -32,7 +32,7 @@
       </el-form>
     </div>
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="index" label="序号" align="center" min-width="50" />
+      <el-table-column type="index" label="序号" align="center" min-width="80" />
       <el-table-column prop="codeValue" label="代码编码" align="center" min-width="100" />
       <el-table-column prop="codeType" label="流程类型" align="center" min-width="150" />
       <el-table-column prop="originalCode" label="源数据代码" align="center" min-width="100" />

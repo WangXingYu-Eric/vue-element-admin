@@ -4,7 +4,7 @@
     <el-row :gutter="10">
       <el-col :span="12">
         <el-table ref="table1" v-loading="tableLoading1" :data="tableData1.filter(data => !search1 || data.tableName.toLowerCase().includes(search1.toLowerCase() || data.tableComment.toLowerCase().includes(search1.toLowerCase())))" height="500" max-height="500" row-key="id" stripe highlight-current-row class="width-100" @selection-change="selectionChange1">
-          <el-table-column type="selection" min-width="50" />
+          <el-table-column type="selection" min-width="80" />
           <el-table-column prop="tableName" label="表名" align="center" min-width="240">
             <template slot="header">
               <el-input v-model="search1" size="mini" placeholder="输入关键字搜索" clearable />
@@ -19,7 +19,7 @@
       </el-col>
       <el-col :span="12">
         <el-table ref="table2" v-loading="tableLoading2" :data="tableData2.filter(data => !search2 || data.tableName.toLowerCase().includes(search2.toLowerCase() || data.tableComment.toLowerCase().includes(search2.toLowerCase())))" height="500" max-height="500" row-key="id" stripe highlight-current-row class="width-100" @selection-change="selectionChange2">
-          <el-table-column type="selection" min-width="50" />
+          <el-table-column type="selection" min-width="80" />
           <el-table-column prop="tableName" label="表名" align="center" min-width="240">
             <template slot="header">
               <el-input v-model="search2" size="mini" placeholder="输入关键字搜索" clearable />
@@ -40,7 +40,7 @@
     <el-row :gutter="10">
       <el-col :span="24">
         <el-table ref="table3" v-loading="tableLoading3" :data="tableData3" row-key="id" stripe highlight-current-row class="width-100">
-          <el-table-column type="selection" min-width="50" />
+          <el-table-column type="selection" min-width="80" />
           <el-table-column prop="table1" label="源数据表" align="center" min-width="120" />
           <el-table-column prop="table2" label="目标数据表" align="center" min-width="120" />
           <el-table-column label="操作" align="center" fixed="right" min-width="100">

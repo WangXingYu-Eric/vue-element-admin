@@ -38,6 +38,12 @@ const packageRouter =
         component: () => import('@/views/demo/package/data-clean-config/index.vue'),
         name: 'DataCleanConfig',
         meta: { title: 'demo.package.children.dataCleanConfig.title', icon: '', affix: false, roles: ['admin'] }
+      },
+      {
+        path: 'index',
+        component: () => import('@/views/demo/package/workflow/index.vue'),
+        name: 'WorkflowIndex',
+        meta: { title: 'demo.workflow.title', icon: '', affix: false, roles: ['admin'] }
       }
     ]
   }

@@ -2,7 +2,7 @@
   <div class="page-container">
     <el-divider content-position="left">上报参数列表</el-divider>
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="index" label="序号" align="center" min-width="50" />
+      <el-table-column type="index" label="序号" align="center" min-width="80" />
       <el-table-column prop="reportArea" label="上报地区" align="center" min-width="150" />
       <el-table-column prop="licenseCode" label="金融许可证代码" align="center" min-width="100" />
       <el-table-column prop="superviseCode" label="监管统计系统代码" align="center" min-width="100" />

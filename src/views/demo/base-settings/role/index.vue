@@ -34,8 +34,8 @@
         </el-form>
       </div>
       <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row @selection-change="selectionChange" @row-click="toggleSelection">
-        <el-table-column type="selection" min-width="50" />
-        <el-table-column type="index" label="序号" min-width="50" />
+        <el-table-column type="selection" min-width="80" />
+        <el-table-column type="index" label="序号" min-width="80" />
         <el-table-column prop="a" label="角色名称" align="center" min-width="100" />
         <el-table-column prop="b" label="角色编码" align="center" min-width="100" />
         <el-table-column prop="c" label="状态" align="center" min-width="100" />

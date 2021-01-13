@@ -99,8 +99,8 @@
     </div>
     <el-divider content-position="left">综合查询列表</el-divider>
     <el-table ref="table1" v-loading="tableLoading1" :data="tableData1" row-key="id" stripe highlight-current-row class="tableSelect width-100" @selection-change="handleSelectionChange" @current-change="chooseMcaterialChange">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column type="index" label="序号" min-width="80" />
       <el-table-column prop="jobNumber" label="职场名称" align="center" min-width="100" />
       <el-table-column prop="batchNumber" label="投保单号" align="center" min-width="100" />
       <el-table-column prop="dataStartTime" label="投保日期" align="center" min-width="100" />
@@ -120,7 +120,7 @@
 
 <script>
 import Pagination from '@/components/Pagination/index'
-import { fetchList1, fetchList2 } from '@/api/demo/data-maintenance/dongjiangao'
+import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
 
 export default {
   name: 'RuleHitStatistics',

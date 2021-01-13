@@ -56,8 +56,8 @@
       </el-form>
     </div>
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column prop="id" label="序号" align="center" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column prop="id" label="序号" align="center" min-width="80" />
       <el-table-column prop="roleCollection" label="所属规则集" align="center" min-width="150" />
       <el-table-column prop="roleSource" label="规则来源" align="center" min-width="100" />
       <el-table-column prop="roleType" label="规则类型" align="center" min-width="100" />

@@ -12,7 +12,7 @@ const dataCollectionRouter =
     meta: { title: 'demo.dataCollection.title', icon: '', affix: false, roles: ['admin'] },
     children: [
       {
-        path: 'standard-data-base',
+        path: 'standard-database',
         redirect: '/demo/data-collection/standard-database/finance/index',
         hidden: false,
         component: AppMain,
@@ -31,6 +31,13 @@ const dataCollectionRouter =
             component: () => import('@/views/demo/data-collection/standard-database/car/index'),
             name: 'CarIndex',
             meta: { title: 'demo.dataCollection.children.standardDataBase.children.car.title', icon: '', affix: false, roles: ['admin'] }
+          },
+          {
+            hidden: true,
+            path: 'standard-database/details',
+            component: () => import('@/views/demo/data-collection/standard-database/details.vue'),
+            name: 'StandardDataBaseDetails',
+            meta: { title: 'demo.dataCollection.children.standardDataBase.children.details.title', icon: '', affix: false, roles: ['admin'] }
           }
         ]
       },

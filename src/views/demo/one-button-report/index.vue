@@ -47,8 +47,8 @@
       </el-form>
     </div>
     <el-table ref="table1" v-loading="tableLoading1" :data="tableData1" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column type="index" label="序号" min-width="80" />
       <el-table-column prop="jobNumber" label="任务号" align="center" min-width="100" />
       <el-table-column prop="a" label="上报状态" align="center" min-width="110" />
       <el-table-column prop="b" label="校验状态" align="center" min-width="110" />
@@ -77,8 +77,8 @@
       <el-button slot="trigger" size="small" type="primary">校验结果</el-button>
     </div>
     <el-table ref="table2" v-loading="tableLoading2" :data="tableData2" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column type="index" label="序号" min-width="80" />
       <el-table-column prop="ywb" label="报送机构" align="center" min-width="100" />
       <el-table-column prop="bmc" label="报送区间" align="center" min-width="100" />
       <el-table-column prop="zdbm" label="数据包" align="center" min-width="100" />

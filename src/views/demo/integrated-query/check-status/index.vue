@@ -31,8 +31,8 @@
     </div>
     <el-divider content-position="left">综合查询列表</el-divider>
     <el-table ref="table1" v-loading="tableLoading1" :data="tableData1" row-key="id" stripe highlight-current-row class="tableSelect width-100" @selection-change="handleSelectionChange" @current-change="chooseMcaterialChange">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column type="index" label="序号" min-width="80" />
       <el-table-column prop="jobNumber" label="任务号" align="center" min-width="100" />
       <el-table-column prop="batchNumber" label="批次号" align="center" min-width="100" />
       <el-table-column prop="jobType" label="任务类型" align="center" min-width="100" />
@@ -49,7 +49,7 @@
     <el-divider content-position="left">校验明细项统计</el-divider>
     <div class="filter-container">
       <el-table ref="table2" v-loading="tableLoading2" :data="tableData2" row-key="id" stripe highlight-current-row class="width-100">
-        <el-table-column type="index" label="序号" min-width="50" />
+        <el-table-column type="index" label="序号" min-width="80" />
         <el-table-column prop="userCode" label="所属部门" align="center" min-width="170" />
         <el-table-column prop="batchNumber" label="业务表" align="center" min-width="150" />
         <el-table-column prop="position" label="表名称" align="center" min-width="150" />

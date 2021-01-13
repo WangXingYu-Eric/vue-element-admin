@@ -32,8 +32,8 @@
     </div>
     <el-divider content-position="left">待确认清单</el-divider>
     <el-table ref="table1" v-loading="tableLoading1" :data="tableData1" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column type="index" label="序号" min-width="80" />
       <el-table-column prop="jobNumber" label="任务号" align="center" min-width="100" />
       <el-table-column prop="batchNumber" label="批次号" align="center" min-width="100" />
       <el-table-column prop="jobType" label="任务类型" align="center" min-width="100" />

@@ -30,8 +30,8 @@
       </el-form>
     </div>
     <el-table ref="table1" v-loading="tableLoading1" :data="tableData1" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column type="index" label="序号" min-width="80" />
       <el-table-column prop="jobNumber" label="任务号" align="center" min-width="100" />
       <el-table-column prop="batchNumber" label="批次号" align="center" min-width="100" />
       <el-table-column prop="jobType" label="任务类型" align="center" min-width="100" />
@@ -83,8 +83,8 @@
       </el-form>
     </div>
     <el-table ref="table2" v-loading="tableLoading2" :data="tableData2" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column type="index" label="序号" min-width="80" />
       <el-table-column prop="jrjgmc" label="金融机构名称" align="center" min-width="130" />
       <el-table-column prop="jrxkzh" label="金融许可证号" align="center" min-width="130" />
       <el-table-column prop="jgdm" label="机构代码" align="center" min-width="130" />

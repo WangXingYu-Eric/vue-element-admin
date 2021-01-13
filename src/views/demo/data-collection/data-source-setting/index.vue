@@ -27,7 +27,7 @@
       </el-form>
     </div>
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="selection" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
       <el-table-column prop="groupName" label="所属部门" align="center" min-width="100">
         <template slot-scope="{row}">
           <template v-if="row.edit">

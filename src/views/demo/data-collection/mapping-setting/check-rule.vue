@@ -14,7 +14,7 @@
       </el-form>
     </div>
     <el-table ref="table1" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="selection" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
       <el-table-column prop="columnField" label="字段名称" align="center" min-width="200" />
       <el-table-column prop="rule" label="条件" align="center" min-width="200" />
       <el-table-column prop="value" label="值" align="center" min-width="200" />

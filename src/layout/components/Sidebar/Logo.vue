@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      title: '监管平台',
+      title: '监管数据标准化报送平台',
       logo: '/sinosoft-logo.png'
     }
   }
@@ -55,8 +55,8 @@ export default {
     width: 100%;
 
     & .sidebar-logo {
-      width: 32px;
-      height: 32px;
+      width: 16px;
+      height: 16px;
       vertical-align: middle;
       margin-right: 12px;
     }

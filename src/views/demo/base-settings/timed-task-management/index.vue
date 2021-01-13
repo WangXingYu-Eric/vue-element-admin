@@ -29,8 +29,8 @@
         @selection-change="selectionChange"
         @row-click="toggleSelection"
       >
-        <el-table-column type="selection" min-width="50" />
-        <el-table-column type="index" label="序号" min-width="50" />
+        <el-table-column type="selection" min-width="80" />
+        <el-table-column type="index" label="序号" min-width="80" />
         <el-table-column prop="a" label="服务名称" align="center" min-width="100" />
         <el-table-column prop="b" label="对象名称" align="center" min-width="100" />
         <el-table-column prop="c" label="参数" align="center" min-width="100" />

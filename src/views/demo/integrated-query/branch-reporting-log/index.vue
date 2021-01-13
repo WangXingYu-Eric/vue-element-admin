@@ -31,8 +31,8 @@
     </div>
     <el-divider content-position="left">综合查询列表</el-divider>
     <el-table ref="table1" v-loading="tableLoading1" :data="tableData1" row-key="id" stripe highlight-current-row class="tableSelect width-100" @selection-change="handleSelectionChange" @current-change="chooseMcaterialChange">
-      <el-table-column type="selection" min-width="50" />
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="selection" min-width="80" />
+      <el-table-column type="index" label="序号" min-width="80" />
       <el-table-column prop="jobNumber" label="任务号" align="center" min-width="100" />
       <el-table-column prop="id" label="分支机构" align="center" min-width="100" />
       <el-table-column prop="batchNumber" label="批次号" align="center" min-width="100" />

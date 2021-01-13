@@ -3,10 +3,13 @@
     <el-row :gutter="10">
       <el-col :span="24">
         <el-table ref="table" v-loading="tableLoading" :data="tableData.filter(data => !search || data.tableName.toLowerCase().includes(search.toLowerCase() || data.tableComment.toLowerCase().includes(search.toLowerCase())))" row-key="id" stripe highlight-current-row class="width-100">
-          <el-table-column type="index" min-width="50" />
+          <el-table-column type="index" min-width="80" />
           <el-table-column prop="tableName" label="表名" align="center" min-width="240">
             <template slot="header">
               <el-input v-model="search" size="mini" placeholder="输入关键字搜索" clearable />
+            </template>
+            <template slot-scope="{row}">
+              <el-link type="primary" title="点击查看详细信息" @click="goDetails(row)">{{ row.tableName }}</el-link>
             </template>
           </el-table-column>
           <el-table-column prop="tableComment" label="描述" align="center" min-width="400">
@@ -50,6 +53,9 @@ export default {
         console.log(error)
         this.tableLoading = false
       })
+    },
+    goDetails(row) {
+      this.$router.push({ name: 'StandardDataBaseDetails', params: { table: row }})
     }
   }
 }

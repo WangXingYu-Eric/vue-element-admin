@@ -76,8 +76,8 @@ export const constantRoutes = [
     path: '/',
     component: Layout,
     hidden: true,
-    redirect: '/demo/base-settings/group-role/index',
-    name: 'DefaultPage',
+    redirect: '/demo/integrated-query/report-problem-summary/index',
+    name: 'ReportProblemSummary',
     meta: { title: '默认页面', icon: '', affix: false, noCache: true, roles: ['admin'] }
   }
   /* {

@@ -12,7 +12,6 @@ import dataApprovalRouter from './data-approval'
 import oneButtonReportRouter from './one-button-report'
 import receiptRouter from './receipt'
 import integratedQueryRouter from './integrated-query'
-import workflowRouter from './workflow'
 
 const demoRouter = [
   // 系统管理
@@ -38,9 +37,7 @@ const demoRouter = [
   // 回执处理
   receiptRouter,
   // 综合查询
-  integratedQueryRouter,
-  // 流程管理
-  workflowRouter
+  integratedQueryRouter
 ]
 
 export default demoRouter

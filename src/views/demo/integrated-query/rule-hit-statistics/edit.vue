@@ -2,7 +2,7 @@
   <div>
     <el-dialog title="历史校验轨迹" :visible.sync="editVisible" width="768px" :close-on-click-modal="false" @close="close">
       <el-table ref="table2" v-loading="tableLoading2" :data="tableData2" row-key="id" stripe highlight-current-row class="width-100">
-        <el-table-column type="index" label="序号" min-width="50" />
+        <el-table-column type="index" label="序号" min-width="80" />
         <el-table-column prop="userCode" label="校验编号" align="center" min-width="170" />
         <el-table-column prop="batchNumber" label="错误总量" align="center" min-width="150" />
         <el-table-column prop="entryTime" label="检验日期" align="center" min-width="150" />

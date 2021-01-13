@@ -28,7 +28,7 @@
       </el-form>
     </div>
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
-      <el-table-column type="index" label="序号" min-width="50" />
+      <el-table-column type="index" label="序号" min-width="80" />
       <el-table-column prop="batchNumber" label="批次号" align="center" min-width="100" />
       <el-table-column prop="reportType" label="报送方式" align="center" min-width="100" />
       <el-table-column prop="dataGroup" label="数据机构" align="center" min-width="100" />
