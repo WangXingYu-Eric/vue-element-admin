@@ -4,6 +4,15 @@
       <el-form ref="form" :model="filter" :rules="rules" class="form-container" @submit.native.prevent>
         <el-row :gutter="10">
           <el-col :xs="24" :sm="12" :md="8">
+            <el-form-item label-width="90px" label="业务应用:" prop="roleSource">
+              <el-select v-model="filter.serviceType" :placeholder="'请选择业务应用'" clearable class="width-100">
+                <el-option :key="'1'" :label="'EAST'" :value="'EAST'" />
+                <el-option :key="'2'" :label="'1104'" :value="'1104'" />
+                <el-option :key="'3'" :label="'大集中'" :value="'大集中'" />
+              </el-select>
+            </el-form-item>
+          </el-col>
+          <el-col :xs="24" :sm="12" :md="8">
             <el-form-item label-width="90px" label="规则来源:" prop="roleSource">
               <el-select v-model="filter.roleSource" :placeholder="'请选择规则来源'" clearable class="width-100">
                 <el-option :key="'1'" :label="'监管发文规则'" :value="'监管发文规则'" />
@@ -58,6 +67,7 @@
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
       <el-table-column type="selection" min-width="80" />
       <el-table-column prop="id" label="序号" align="center" min-width="80" />
+      <el-table-column prop="serviceType" label="业务应用" align="center" min-width="150" />
       <el-table-column prop="roleCollection" label="所属规则集" align="center" min-width="150" />
       <el-table-column prop="roleSource" label="规则来源" align="center" min-width="100" />
       <el-table-column prop="roleType" label="规则类型" align="center" min-width="100" />
@@ -84,7 +94,8 @@ export default {
         roleCollection: '',
         roleMajorTable: '',
         roleStatus: '',
-        roleDescription: ''
+        roleDescription: '',
+        serviceType: ''
       },
       rules: {
       },

@@ -1,5 +1,8 @@
 <template>
   <div class="login-container">
+
+    <particles />
+
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
 
       <div class="title-container">
@@ -85,22 +88,22 @@ import { validUsername } from '@/utils/validate'
 // import LangSelect from '@/components/LangSelect'
 import SocialSign from './components/SocialSignin'
 // 粒子背景效果
-// import Particles from '@/components/nsf-components/particles'
+import Particles from '@/components/Particles'
 
 export default {
   name: 'Login',
-  components: { /* LangSelect, */SocialSign },
+  components: { /* LangSelect, */SocialSign, Particles },
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
-        callback(new Error('Please enter the correct user name'))
+        callback(new Error('用户名不存在'))
       } else {
         callback()
       }
     }
     const validatePassword = (rule, value, callback) => {
-      if (value.length < 6) {
-        callback(new Error('The password can not be less than 6 digits'))
+      if (value.length === 0) {
+        callback(new Error('请输入密码'))
       } else {
         callback()
       }
@@ -233,16 +236,17 @@ $cursor: #fff;
 
     input {
       background: transparent;
-      border: 0px;
+      border: 0;
       -webkit-appearance: none;
-      border-radius: 0px;
+      border-radius: 0;
       padding: 12px 5px 12px 15px;
       color: $light_gray;
       height: 47px;
       caret-color: $cursor;
 
       &:-webkit-autofill {
-        box-shadow: 0 0 0px 1000px $bg inset !important;
+        box-shadow: 0 0 0 1000px $bg inset !important;
+        -webkit-box-shadow: 0 0 0 1000px $bg inset !important;
         -webkit-text-fill-color: $cursor !important;
       }
     }
@@ -254,6 +258,13 @@ $cursor: #fff;
     border-radius: 5px;
     color: #454545;
   }
+
+  /*改变输入框中字体和光标颜色*/
+  .el-input__inner {
+    color: #889AA4 !important;
+    caret-color: #889AA4 !important;
+  }
+
 }
 </style>
 
@@ -339,5 +350,6 @@ $light_gray:#eee;
       display: none;
     }
   }
+
 }
 </style>

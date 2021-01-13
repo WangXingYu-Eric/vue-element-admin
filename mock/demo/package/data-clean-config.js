@@ -10,7 +10,8 @@ for (let i = 0; i < 100; i++) {
     roleMajorTable: '机构股权信息表',
     'roleStatus|1': ['启用', '停用'],
     roleDescription: '@ctitle(4,8)',
-    'data|1': ['机构证件类型', '个人证件类型', '处罚机关']
+    'data|1': ['机构证件类型', '个人证件类型', '处罚机关'],
+    'serviceType|1': ['EAST', '1104', '大集中']
   }))
 }
 
@@ -22,6 +23,7 @@ module.exports = [
       const filter = JSON.parse(config.query.filter)
       const pagination = JSON.parse(config.query.pagination)
       const filteredList = list.filter(item => {
+        if (filter.serviceType && item.serviceType !== filter.serviceType) { return false }
         if (filter.roleSource && item.roleSource !== filter.roleSource) { return false }
         if (filter.roleType && item.roleType !== filter.roleType) { return false }
         if (filter.roleCollection && item.roleCollection !== filter.roleCollection) { return false }
