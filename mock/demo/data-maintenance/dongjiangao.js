@@ -10,9 +10,9 @@ for (let i = 0; i < 2; i++) {
     majorJob: /^[MS](0000015)\d{3}$/,
     'reportStatus|1': ['人工维护中', '待人工维护'],
     dataRange: '2017-2020年',
-    dataStartTime: '@datetime("yyyy-MM-dd")',
-    dataEndTime: '@datetime("yyyy-MM-dd")',
-    dataProcessTime: '@datetime("yyyy-MM-dd HH:mm:ss")'
+    dataStartTime: '@datetime("2020-MM-dd")',
+    dataEndTime: '@datetime("2020-MM-dd")',
+    dataProcessTime: '@datetime("2020-MM-dd HH:mm:ss")'
   }))
 }
 
@@ -27,9 +27,9 @@ for (let i = 0; i < 3; i++) {
     name: '@cname',
     code: /^[MS](0000015)\d{3}$/,
     zjhm: '',
-    startTime: '@datetime("yyyy-MM-dd")',
-    endTime: '@datetime("yyyy-MM-dd")',
-    pfTime: '@datetime("yyyy-MM-dd")',
+    startTime: '@datetime("2020-MM-dd")',
+    endTime: '@datetime("2020-MM-dd")',
+    pfTime: '@datetime("2020-MM-dd")',
     'gwrzxx|1': ['董事长', '高级总裁', '高级副总裁', '董事'],
     cfxh: /^[MS](0000015)\d{3}$/,
     cfjg: '',
@@ -37,9 +37,9 @@ for (let i = 0; i < 3; i++) {
     cfyy: '',
     cfje: '',
     'zw|1': ['董事长', '高级总裁', '高级副总裁', '董事'],
-    entryTime: '@datetime("yyyy-MM-dd")',
-    leaveTime: '@datetime("yyyy-MM-dd")',
-    birthday: '@datetime("yyyy-MM-dd")',
+    entryTime: '@datetime("2020-MM-dd")',
+    leaveTime: '@datetime("2020-MM-dd")',
+    birthday: '@datetime("2020-MM-dd")',
     'zjlb|1': ['身份证', '驾照', '护照', '户口本'],
     cardNo: '@id'
   }))

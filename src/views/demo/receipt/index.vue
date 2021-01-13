@@ -9,7 +9,6 @@
               <el-select v-model="filter1.reportArea" :placeholder="'请选择上报地区'" clearable style="width: 100%">
                 <el-option :key="'1'" :label="'浙江分公司'" :value="'浙江分公司'" />
                 <el-option :key="'2'" :label="'大连分公司'" :value="'大连分公司'" />
-                <el-option :key="'3'" :label="'送公司'" :value="'送公司'" />
                 <el-option :key="'4'" :label="'宁波分公司'" :value="'宁波分公司'" />
                 <el-option :key="'5'" :label="'上海分公司'" :value="'上海分公司'" />
               </el-select>
@@ -20,7 +19,6 @@
               <el-select v-model="filter1.reportGroup" :placeholder="'请选择上报机构'" clearable style="width: 100%">
                 <el-option :key="'1'" :label="'浙江分公司'" :value="'浙江分公司'" />
                 <el-option :key="'2'" :label="'大连分公司'" :value="'大连分公司'" />
-                <el-option :key="'3'" :label="'送公司'" :value="'送公司'" />
                 <el-option :key="'4'" :label="'宁波分公司'" :value="'宁波分公司'" />
                 <el-option :key="'5'" :label="'上海分公司'" :value="'上海分公司'" />
               </el-select>
@@ -57,15 +55,9 @@
     <el-table ref="table1" v-loading="tableLoading1" :data="tableData1" row-key="id" stripe highlight-current-row class="width-100">
       <el-table-column type="selection" min-width="50" />
       <el-table-column type="index" label="序号" min-width="50" />
-      <el-table-column prop="jobNumber" label="任务号" align="center" min-width="100" />
-      <el-table-column prop="batchNumber" label="批次号" align="center" min-width="100" />
-      <el-table-column prop="jobType" label="任务类型" align="center" min-width="100" />
-      <el-table-column prop="majorJob" label="所属主任务" align="center" min-width="100" />
-      <el-table-column prop="dataRange" label="数据区间" align="center" min-width="100" />
-      <el-table-column prop="reportStatus" label="上报状态" align="center" min-width="110" />
-      <el-table-column prop="reportStatus" label="校验状态" align="center" min-width="100" />
-      <el-table-column prop="dataStartTime" label="上报起始日期" align="center" min-width="100" />
-      <el-table-column prop="dataEndTime" label="上报截止日期" align="center" min-width="100" />
+      <el-table-column prop="jobNumber" label="数据区间" align="center" min-width="100" />
+      <el-table-column prop="batchNumber" label="文件状态" align="center" min-width="100" />
+      <el-table-column prop="jobType" label="任务号" align="center" min-width="100" />
       <el-table-column prop="dataProcessTime" label="处理时间" align="center" min-width="130" />
     </el-table>
     <pagination v-show="pagination1.total>0" :total="pagination1.total" :page.sync="pagination1.page" :limit.sync="pagination1.limit" class="float-right" @pagination="fetchList1()" />
@@ -120,7 +112,7 @@
 
 <script>
 import Pagination from '@/components/Pagination/index'
-import { fetchList1 } from '@/api/demo/data-maintenance/dongjiangao'
+import { fetchList1 } from '@/api/demo/receipt'
 
 export default {
   name: 'Redirect',

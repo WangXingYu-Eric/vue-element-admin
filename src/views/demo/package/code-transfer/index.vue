@@ -4,9 +4,13 @@
       <el-form ref="form" :model="filter" :rules="rules" class="form-container" @submit.native.prevent>
         <el-row :gutter="10">
           <el-col :xs="24" :sm="12" :md="8">
-            <el-form-item label-width="90px" label="代码类型:" prop="codeType">
-              <el-select v-model="filter.codeType" :placeholder="'请选择代码类型'" clearable class="width-100">
-                <el-option :key="'1'" :label="'人身险责任类别代码'" :value="'人身险责任类别代码'" />
+            <el-form-item label-width="90px" label="流程类型:" prop="codeType">
+              <el-select v-model="filter.codeType" :placeholder="'请选择流程类型'" clearable class="width-100">
+                <el-option :key="'1'" :label="'受理'" :value="'受理'" />
+                <el-option :key="'2'" :label="'调查评论'" :value="'调查评论'" />
+                <el-option :key="'3'" :label="'审批'" :value="'审批'" />
+                <el-option :key="'4'" :label="'发放'" :value="'发放'" />
+                <el-option :key="'5'" :label="'贷后管理'" :value="'贷后管理'" />
               </el-select>
             </el-form-item>
           </el-col>
@@ -30,7 +34,7 @@
     <el-table ref="table" v-loading="tableLoading" :data="tableData" row-key="id" stripe highlight-current-row class="width-100">
       <el-table-column type="index" label="序号" align="center" min-width="50" />
       <el-table-column prop="codeValue" label="代码编码" align="center" min-width="100" />
-      <el-table-column prop="codeType" label="代码类型" align="center" min-width="150" />
+      <el-table-column prop="codeType" label="流程类型" align="center" min-width="150" />
       <el-table-column prop="originalCode" label="源数据代码" align="center" min-width="100" />
       <el-table-column prop="targetCode" label="目标代码" align="center" min-width="150" />
       <el-table-column prop="targetCodeName" label="目标代码名" align="center" min-width="100" />
