@@ -50,10 +50,10 @@
     <div class="filter-container">
       <el-table ref="table2" v-loading="tableLoading2" :data="tableData2" row-key="id" stripe highlight-current-row class="width-100">
         <el-table-column type="index" label="序号" min-width="80" />
-        <el-table-column prop="userCode" label="所属部门" align="center" min-width="170" />
-        <el-table-column prop="batchNumber" label="业务表" align="center" min-width="150" />
-        <el-table-column prop="position" label="表名称" align="center" min-width="150" />
-        <el-table-column prop="entryTime" label="维护状态" align="center" min-width="150" />
+        <el-table-column prop="group" label="所属部门" align="center" min-width="170" />
+        <el-table-column prop="businessTable" label="业务表" align="center" min-width="150" />
+        <el-table-column prop="tableName" label="表名称" align="center" min-width="150" />
+        <el-table-column prop="status" label="维护状态" align="center" min-width="150" />
       </el-table>
       <pagination v-show="pagination2.total>0" :total="pagination2.total" :page.sync="pagination2.page" :limit.sync="pagination2.limit" class="float-right" @pagination="fetchList2()" />
     </div>

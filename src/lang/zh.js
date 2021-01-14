@@ -263,7 +263,7 @@ export default {
     size: '布局大小'
   },
   login: {
-    title: '系统登录',
+    title: '监管数据标准化报送平台',
     logIn: '登录',
     username: '账号',
     password: '密码',

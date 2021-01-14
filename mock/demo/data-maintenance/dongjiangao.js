@@ -41,7 +41,11 @@ for (let i = 0; i < 3; i++) {
     leaveTime: '@datetime("2020-MM-dd")',
     birthday: '@datetime("2020-MM-dd")',
     'zjlb|1': ['身份证', '驾照', '护照', '户口本'],
-    cardNo: '@id'
+    cardNo: '@id',
+    'group|1': ['财务部', '董办', '总公司'],
+    'businessTable|1': ['NON_BANK_BGDKYS', 'NON_BANK_BWYWZTXX', 'NON_BANK_DGDQCKFHZ'],
+    'tableName|1': ['并购贷款要素', '表外业务状态信息', '对公定期存款分户账'],
+    'status|1': ['启用', '停用']
   }))
 }
 

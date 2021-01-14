@@ -4,7 +4,7 @@
       <div class="filter-container">
         <el-row>
           <el-col :xs="24" :sm="24" :lg="24">
-            <img src="http://192.168.223.89:5301/workflow-service/app/getProcessDiagram/60001" style="width:100%;height:100%;" alt="节点图">
+            <img src="http://13810600758.qicp.vip/workflow-service/app/getProcessDiagram/60001" style="width:100%;height:100%;" alt="节点图">
           </el-col>
         </el-row>
       </div>

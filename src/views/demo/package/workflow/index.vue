@@ -118,7 +118,7 @@ export default {
       })
     },
     editHandler(row) {
-      this.iframeSrc = 'http://192.168.223.89:5701/#/editor/' + row.id
+      this.iframeSrc = 'http://13810600758.qicp.vip:51713/#/editor/' + row.id
       this.visible = true
     }
   }
