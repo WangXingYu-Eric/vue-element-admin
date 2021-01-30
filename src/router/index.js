@@ -77,7 +77,7 @@ export const constantRoutes = [
     component: Layout,
     hidden: true,
     redirect: '/demo/integrated-query/report-problem-summary/index',
-    name: 'ReportProblemSummary',
+    name: 'Index',
     meta: { title: '默认页面', icon: '', affix: false, noCache: true, roles: ['admin'] }
   }
   /* {
